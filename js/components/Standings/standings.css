@@ -1,0 +1,13 @@
+.teams-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	font-family: "Arial Black", Gadget, sans-serif;
+
+	.team-item {
+		padding: 10px;
+		width: 300px;
+	}
+}
