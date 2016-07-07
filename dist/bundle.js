@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ae86a97d5833c38ae380"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7f8cb8cb0a80b660d426"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -2353,7 +2353,7 @@
 /* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("exports = module.exports = __webpack_require__(189)();\n// imports\n\n\n// module\nexports.push([module.id, \".teams-container {\\n  display: -webkit-box;\\n  display: -ms-flexbox;\\n  display: flex;\\n  -webkit-box-orient: horizontal;\\n  -webkit-box-direction: normal;\\n      -ms-flex-direction: row;\\n          flex-direction: row;\\n  -webkit-box-pack: center;\\n      -ms-flex-pack: center;\\n          justify-content: center;\\n  -ms-flex-wrap: wrap;\\n      flex-wrap: wrap;\\n  width: 100%;\\n  font-family: \\\"Arial Black\\\", Gadget, sans-serif; }\\n  .teams-container .team-item {\\n    padding: 10px;\\n    width: 300px; }\\n\", \"\"]);\n\n// exports\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/css-loader!./~/postcss-loader!./~/sass-loader!./js/components/Standings/standings.css\n ** module id = 295\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./js/components/Standings/standings.css?./~/css-loader!./~/postcss-loader!./~/sass-loader");
+	eval("exports = module.exports = __webpack_require__(189)();\n// imports\n\n\n// module\nexports.push([module.id, \".teams-container {\\n  display: -webkit-box;\\n  display: -ms-flexbox;\\n  display: flex;\\n  -webkit-box-orient: horizontal;\\n  -webkit-box-direction: normal;\\n      -ms-flex-direction: row;\\n          flex-direction: row;\\n  -webkit-box-pack: center;\\n      -ms-flex-pack: center;\\n          justify-content: center;\\n  -ms-flex-wrap: wrap;\\n      flex-wrap: wrap;\\n  font-family: \\\"Arial Black\\\", Gadget, sans-serif; }\\n  .teams-container .team-item {\\n    padding: 10px;\\n    width: 300px; }\\n\", \"\"]);\n\n// exports\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/css-loader!./~/postcss-loader!./~/sass-loader!./js/components/Standings/standings.css\n ** module id = 295\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./js/components/Standings/standings.css?./~/css-loader!./~/postcss-loader!./~/sass-loader");
 
 /***/ }
 /******/ ]);
