@@ -1,5 +1,6 @@
-export function init() {
+export function init(teams) {
   return {
-    type: 'INIT'
+    type: 'INIT',
+    teams: teams
   }
 }

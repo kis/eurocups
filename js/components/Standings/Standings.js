@@ -11,6 +11,10 @@ class Standings extends Component {
 		super(props);
 	}
 
+	componentWillMount() {
+		api.getTeams();
+	}
+
 	shouldComponentUpdate(nextProps, nextState) {
 		return true;
 	}

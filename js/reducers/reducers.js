@@ -2,13 +2,14 @@ import { combineReducers } from 'redux';
 import * as actions from '../actions/actions';
 
 var init = {
-  started: false
+  started: false,
+  teams: []
 };
 
 function standings(state = init, action) {
   switch (action.type) {
     case 'INIT':
-    return {...state, started: true};
+    return {...state, teams: action.teams};
 
     default:
     return {...state};
