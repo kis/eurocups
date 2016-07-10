@@ -12,7 +12,7 @@ class Standings extends Component {
 	}
 
 	componentWillMount() {
-		api.getTeams();
+		actions.fetchTeams();
 	}
 
 	componentWillUpdate() {
@@ -28,8 +28,8 @@ class Standings extends Component {
 			<div className="teams-container">
 				{this.props.standings.teams.map((result, i) => {
 					return <div className="team-item" key={i}>
-						<div>{result.Group}</div> 
-						<div>{result.Team}</div> 
+						<div>{result.Group}</div>
+						<div>{result.Team}</div>
 						<div>Coach: {result.Coach}</div>
 						<div>Bio: {result.Bio}</div>
 						<div>FIFA Ranking: {result['FIFA ranking']}</div>

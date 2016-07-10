@@ -8,7 +8,7 @@ import Standings from '../components/Standings/Standings';
 class AppContainer extends Component {
   render() {
     console.log(this.props)
-    
+
     return (
       <div>
         <Standings standings={this.props.standings} actions={this.props.actions} />
