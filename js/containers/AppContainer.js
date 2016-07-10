@@ -7,8 +7,6 @@ import StandingsContainer from './StandingsContainer';
 
 class AppContainer extends Component {
   render() {
-    console.log('AppContainer', this.props)
-
     return (
       <div>
         <StandingsContainer />

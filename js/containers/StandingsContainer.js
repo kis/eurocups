@@ -12,7 +12,6 @@ class StandingsContainer extends Component {
 	}
 
   render() {
-    console.log('StandingsContainer', this.props)
     // <Standings {...this.props}
 
     return (
