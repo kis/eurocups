@@ -23,7 +23,7 @@ export function fetchTeams() {
 		return fetch('../../assets/football/Euro2016/teams.json')
       .then(response => response.json())
       .then(response =>
-        dispatch(receiveTeams(response))
+        dispatch(receiveTeams(response.sheets.Teams))
       )
 	}
 

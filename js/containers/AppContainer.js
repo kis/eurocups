@@ -3,23 +3,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-import Standings from '../components/Standings/Standings';
+import StandingsContainer from './StandingsContainer';
 
 class AppContainer extends Component {
   render() {
-    console.log(this.props)
+    console.log('AppContainer', this.props)
 
     return (
       <div>
-        <Standings standings={this.props.standings} actions={this.props.actions} />
+        <StandingsContainer />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  standings: state.standings
-});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
 

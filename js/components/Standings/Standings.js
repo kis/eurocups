@@ -11,10 +11,6 @@ class Standings extends Component {
 		super(props);
 	}
 
-	componentWillMount() {
-		actions.fetchTeams();
-	}
-
 	componentWillUpdate() {
 		console.log(this.props)
 	}
@@ -24,9 +20,11 @@ class Standings extends Component {
 	}
 
 	render() {
+		console.log('Standings', this.props)
+
 		return (
 			<div className="teams-container">
-				{this.props.standings.teams.map((result, i) => {
+				{this.props.standings.teams ? this.props.standings.teams.map((result, i) => {
 					return <div className="team-item" key={i}>
 						<div>{result.Group}</div>
 						<div>{result.Team}</div>
@@ -34,16 +32,10 @@ class Standings extends Component {
 						<div>Bio: {result.Bio}</div>
 						<div>FIFA Ranking: {result['FIFA ranking']}</div>
 					</div>
-				})}
+				}) : null}
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = (state) => ({
-  standings: state.standings
-});
-
-const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Standings);
+export default Standings;

@@ -1,5 +1,5 @@
-import 'whatwg-fetch';
-import store from '../store/store';
+// import 'whatwg-fetch';
+// import store from '../store/store';
 
 // export function fetchTeams() {
 //
