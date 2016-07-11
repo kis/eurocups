@@ -7,8 +7,8 @@ import Standings from '../components/Standings/Standings';
 
 class StandingsContainer extends Component {
   componentWillMount() {
-    const { dispatch } = this.props;
-		dispatch(actions.fetchTeams());
+    const { actions } = this.props;
+    actions.fetchTeams();
 	}
 
   render() {
@@ -26,8 +26,6 @@ const mapStateToProps = (state) => ({
   standings: state.standings
 });
 
-// const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(StandingsContainer);
+const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
 
-export default connect(mapStateToProps)(StandingsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(StandingsContainer);
