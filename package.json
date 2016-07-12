@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "euro16",
   "scripts": {
-    "start": "webpack;node server"
+    "start-dev": "export NODE_ENV=development&&webpack&&node server",
+    "start-prod": "export NODE_ENV=production&&webpack&&node server"
   },
   "dependencies": {
     "autoprefixer": "^6.3.4",

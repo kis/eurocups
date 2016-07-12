@@ -7,6 +7,9 @@ var compiler = webpack(config);
 
 var server = new WebpackDevServer(compiler, {
 	publicPath: config.output.publicPath,
+	contentBase: 'dist',
+  	hot: true,
+  	filename: 'bundle.js',
 	stats: {
 		colors: true
 	}

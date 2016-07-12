@@ -1,0 +1,22 @@
+.teams-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Arial Black", Gadget, sans-serif; }
+  .teams-container .team-item {
+    padding: 10px;
+    width: 300px;
+    background-color: yellow; }
+    .teams-container .team-item .team-title {
+      cursor: pointer; }
+      .teams-container .team-item .team-title:hover {
+        color: red; }
