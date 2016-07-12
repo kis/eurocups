@@ -1,8 +1,8 @@
 var path = require('path');
-var webpack = require('webpack');
 
 var autoprefixer = require('autoprefixer');
 var precss       = require('precss');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var appContext = path.join(__dirname, '/');
 
@@ -12,28 +12,31 @@ module.exports = {
     // 'webpack-dev-server/client?http://localhost:3000',
     './js/index'
   ],
-  devtool: 'eval',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
     publicPath: "http://localhost:3001/"
     // publicPath: '/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   module: {
     loaders: [{
       test: /\.js?$/,
       loaders: ['babel-loader?stage=0&optional=runtime'],
-      exclude: /node_modules/,
-      include: path.join(__dirname, 'js')
+      include: path.join(__dirname, '/js')
     }, {
       test: /\.css?$/,
-      loader: 'style-loader!css-loader!postcss-loader!sass-loader'
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader')
     }]
   },
+  plugins: [
+    new ExtractTextPlugin("[name].css", { allChunks: true })
+  ],
   postcss: function () {
     return [autoprefixer, precss];
-  }
+  },
+  devServer: {
+    host: 'localhost',
+    port: 3001
+  },
+  // watch: true
 };
