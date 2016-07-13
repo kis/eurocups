@@ -42,10 +42,5 @@ module.exports = {
   ],
   postcss: function () {
     return [autoprefixer, precss];
-  },
-  /*devServer: {
-    host: 'localhost',
-    port: 3001
-  },*/
-  // watch: true
+  }
 };
