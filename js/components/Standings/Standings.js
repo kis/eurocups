@@ -23,12 +23,18 @@ class Standings extends Component {
 		return (
 			<div className="teams-container">
 				{this.props.standings.teams ? this.props.standings.teams.map((result, i) => {
-					return <div className="team-item" key={i}>
-						<div>{result.Group}</div>
-						<div className="team-title" onClick={this.openTeamView.bind(this, result.Team)}>{result.Team}</div>
-						<div>Coach: {result.Coach}</div>
-						<div>Bio: {result.Bio}</div>
-						<div>FIFA Ranking: {result['FIFA ranking']}</div>
+					return <div className="team-item" key={i} onClick={this.openTeamView.bind(this, result.Team)}>
+						<div className="team-group">{result.Group}</div>
+						<div className="team-title">{result.Team}</div>
+						<div className="team-coach clearfix">
+							<div>Coach</div>
+							<div>{result.Coach}</div>
+						</div>
+						<div className="team-bio">{result.Bio}</div>
+						<div className="team-rank clearfix">
+							<div>FIFA Ranking</div>
+							<div>{result['FIFA ranking']}</div>
+						</div>
 					</div>
 				}) : <div>Loading...</div>}
 			</div>
