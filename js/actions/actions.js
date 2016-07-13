@@ -21,13 +21,29 @@ export function fetchTeams() {
         dispatch(receiveTeams(response.sheets.Teams))
       )
 	}
+}
 
-	// fetch('../../assets/football/Euro2016/teams.json').then(response => {
-	// 	return response.json();
-	// }).then(response => {
-	// 	store.dispatch({
-	// 		type: 'INIT',
-	// 		teams: response.sheets.Teams
-	// 	});
-	// });
+export function requestTeam(team) {
+  return {
+    type: 'REQUEST_TEAM',
+    team: team
+  }
+}
+
+export function receiveTeam(team) {
+  return {
+    type: 'RECEIVE_TEAM',
+    team: team
+  }
+}
+
+export function fetchTeam() {
+	return function (dispatch) {
+		dispatch(requestTeam(null))
+		return fetch('./assets/football/Euro2016/teams.json')
+      .then(response => response.json())
+      .then(response =>
+        dispatch(receiveTeam(response.sheets.Teams))
+      )
+	}
 }

@@ -3,13 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-import StandingsContainer from './StandingsContainer';
+import TeamsContainer from './TeamsContainer';
 
 class AppContainer extends Component {
   render() {
     return (
       <div>
-        <StandingsContainer />
+        <TeamsContainer />
       </div>
     )
   }

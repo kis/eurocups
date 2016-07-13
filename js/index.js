@@ -5,12 +5,16 @@ import store from './store/store';
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router';
 
 import AppContainer from './containers/AppContainer';
-import StandingsContainer from './containers/StandingsContainer';
+import TeamsContainer from './containers/TeamsContainer';
+import TeamContainer from './containers/TeamsContainer';
 
 const routes = {
   path: '/',
   component: AppContainer,
-  indexRoute: { component: StandingsContainer }
+  indexRoute: { component: TeamsContainer },
+  childRoutes: [
+    { path: '/team', component: TeamContainer }
+  ]
 };
 
 ReactDOM.render((

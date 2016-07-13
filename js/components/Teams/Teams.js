@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
-import './standings.css';
+import './teams.css';
 
 const propTypes = {
-  standings: PropTypes.object.isRequired
+  teams: PropTypes.object.isRequired
 };
 
-class Standings extends Component {
+class Teams extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -17,13 +18,14 @@ class Standings extends Component {
 
 	openTeamView(team) {
 		console.log(team)
+		// this.context.router.push('/team');
 	}
 
 	render() {
 		return (
 			<div className="teams-container">
-				{this.props.standings.teams ? this.props.standings.teams.map((result, i) => {
-					return <div className="team-item" key={i} onClick={this.openTeamView.bind(this, result.Team)}>
+				{this.props.teams.teams ? this.props.teams.teams.map((result, i) => {
+					return <Link to="/team" key={i}><div className="team-item" key={i} onClick={this.openTeamView.bind(this, result.Team)}>
 						<div className="team-group">{result.Group}</div>
 						<div className="team-title">{result.Team}</div>
 						<div className="team-coach clearfix">
@@ -35,13 +37,13 @@ class Standings extends Component {
 							<div>FIFA Ranking</div>
 							<div>{result['FIFA ranking']}</div>
 						</div>
-					</div>
+					</div></Link>
 				}) : <div>Loading...</div>}
 			</div>
 		);
 	}
 }
 
-Standings.propTypes = propTypes;
+Teams.propTypes = propTypes;
 
-export default Standings;
+export default Teams;

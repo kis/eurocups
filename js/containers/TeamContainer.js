@@ -3,29 +3,31 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-import Standings from '../components/Standings/Standings';
+import Team from '../components/Team/Team';
 
-class StandingsContainer extends Component {
+class TeamContainer extends Component {
   componentWillMount() {
+    console.log('will mount team')
+
     const { actions } = this.props;
-    actions.fetchTeams();
+    actions.fetchTeam();
 	}
 
   render() {
-    // <Standings {...this.props}
+    // <Team {...this.props}
 
     return (
       <div>
-        <Standings standings={this.props.standings} actions={this.props.actions} />
+        <Team team={this.props.team} actions={this.props.actions} />
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  standings: state.standings
+  team: state.team
 });
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
 
-export default connect(mapStateToProps, mapDispatchToProps)(StandingsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(TeamContainer);
