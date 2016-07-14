@@ -62,3 +62,67 @@ body {
       .teams-container .team-item .team-rank div:last-child {
         display: inline-block;
         float: right; }
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  content: "";
+  clear: both;
+  height: 0; }
+
+body {
+  background-color: rgba(64, 146, 0, 0.2); }
+
+.team-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Liberation Mono"; }
+  .team-container .player {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    color: rgba(0, 53, 5, 0.9);
+    background-color: rgba(64, 146, 0, 0.5);
+    font-weight: bold; }
+    .team-container .player:hover {
+      background-color: #409200;
+      color: #003505;
+      cursor: pointer; }
+    .team-container .player .player-group {
+      margin: 15px 5px;
+      font-size: 24px;
+      text-align: center; }
+    .team-container .player .player-title {
+      text-align: center;
+      cursor: pointer; }
+    .team-container .player .player-coach {
+      margin: 15px 5px;
+      color: black; }
+      .team-container .player .player-coach div:first-child {
+        display: inline-block;
+        float: left; }
+      .team-container .player .player-coach div:last-child {
+        display: inline-block;
+        float: right; }
+    .team-container .player .player-bio {
+      margin: 15px 5px;
+      color: black;
+      font-weight: normal; }
+    .team-container .player .player-rank {
+      margin: 15px 5px; }
+      .team-container .player .player-rank div:first-child {
+        display: inline-block;
+        float: left; }
+      .team-container .player .player-rank div:last-child {
+        display: inline-block;
+        float: right; }

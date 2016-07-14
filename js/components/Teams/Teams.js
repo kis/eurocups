@@ -21,12 +21,12 @@ class Teams extends Component {
 	}
 
 	openTeamView(team) {
-		console.log(team)
-		this.context.router.push('/teams/team');
+		this.context.router.push('/teams/' + team.toLowerCase());
 	}
 
 	render() {
 		console.log('Teams', this.props)
+		// <Link to="/teams/team">Go!</Link>
 
 		return (
 			<div className="teams-container">
@@ -43,9 +43,8 @@ class Teams extends Component {
 							<div>FIFA Ranking</div>
 							<div>{result['FIFA ranking']}</div>
 						</div>
-						<Link to="/teams/team" key={i}>Go!</Link>
 					</div>
-				}) : <div>Loading...</div>}
+				}) : <div>Loading teams...</div>}
 			</div>
 		);
 	}

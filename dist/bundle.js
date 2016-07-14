@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1506d8509906a6752335"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1ffab76447c4c8421d00"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -22401,7 +22401,7 @@
 
 	function fetchTeams() {
 	  return function (dispatch) {
-	    dispatch(requestTeams(null));
+	    // dispatch(requestTeams(null))
 	    return fetch('/assets/football/Euro2016/teams.json').then(function (response) {
 	      return response.json();
 	    }).then(function (response) {
@@ -22424,13 +22424,13 @@
 	  };
 	}
 
-	function fetchTeam() {
+	function fetchTeam(team) {
 	  return function (dispatch) {
-	    dispatch(requestTeam(null));
-	    return fetch('/assets/football/Euro2016/teams.json').then(function (response) {
+	    // dispatch(requestTeam(null))
+	    return fetch('/assets/football/Euro2016/' + team + '-players.json').then(function (response) {
 	      return response.json();
 	    }).then(function (response) {
-	      return dispatch(receiveTeam(response.sheets.Teams));
+	      return dispatch(receiveTeam(response.sheets.Players));
 	    });
 	  };
 	}
@@ -28620,8 +28620,7 @@
 		}, {
 			key: 'openTeamView',
 			value: function openTeamView(team) {
-				console.log(team);
-				this.context.router.push('/teams/team');
+				this.context.router.push('/teams/' + team.toLowerCase());
 			}
 		}, {
 			key: 'render',
@@ -28629,6 +28628,7 @@
 				var _this = this;
 
 				console.log('Teams', this.props);
+				// <Link to="/teams/team">Go!</Link>
 
 				return _react2['default'].createElement(
 					'div',
@@ -28679,17 +28679,12 @@
 									null,
 									result['FIFA ranking']
 								)
-							),
-							_react2['default'].createElement(
-								_reactRouter.Link,
-								{ to: '/teams/team', key: i },
-								'Go!'
 							)
 						);
 					}) : _react2['default'].createElement(
 						'div',
 						null,
-						'Loading...'
+						'Loading teams...'
 					)
 				);
 			}
@@ -28771,14 +28766,18 @@
 	    value: function componentWillMount() {
 	      console.log('will mount team');
 
-	      var actions = this.props.actions;
+	      var _props = this.props;
+	      var actions = _props.actions;
+	      var params = _props.params;
 
-	      actions.fetchTeam();
+	      actions.fetchTeam(params.team);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      console.log('TeamContainer', this.props);
+
+	      console.log('werwer', this.props);
 
 	      return _react2['default'].createElement(
 	        'div',
@@ -28847,7 +28846,70 @@
 	      return _react2['default'].createElement(
 	        'div',
 	        { className: 'team-container' },
-	        'asdasd'
+	        this.props.team.team ? this.props.team.team.map(function (result, i) {
+	          return _react2['default'].createElement(
+	            'div',
+	            { className: 'player', key: i },
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-group' },
+	              result.name
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-group' },
+	              result['date of birth']
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-title' },
+	              result.club
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-title' },
+	              result.position
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-title' },
+	              result.number
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-title' },
+	              result['goals for country']
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-title' },
+	              result.caps
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-coach clearfix' },
+	              _react2['default'].createElement(
+	                'div',
+	                null,
+	                'League'
+	              ),
+	              _react2['default'].createElement(
+	                'div',
+	                null,
+	                result.league
+	              )
+	            ),
+	            _react2['default'].createElement(
+	              'div',
+	              { className: 'player-bio' },
+	              result.bio
+	            )
+	          );
+	        }) : _react2['default'].createElement(
+	          'div',
+	          null,
+	          'Loading team...'
+	        )
 	      );
 	    }
 	  }], [{

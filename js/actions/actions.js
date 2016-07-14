@@ -14,7 +14,7 @@ export function receiveTeams(teams) {
 
 export function fetchTeams() {
 	return function (dispatch) {
-		dispatch(requestTeams(null))
+		// dispatch(requestTeams(null))
 		return fetch('/assets/football/Euro2016/teams.json')
       .then(response => response.json())
       .then(response =>
@@ -37,13 +37,13 @@ export function receiveTeam(team) {
   }
 }
 
-export function fetchTeam() {
+export function fetchTeam(team) {
 	return function (dispatch) {
-		dispatch(requestTeam(null))
-		return fetch('/assets/football/Euro2016/teams.json')
+		// dispatch(requestTeam(null))
+		return fetch(`/assets/football/Euro2016/${team}-players.json`)
       .then(response => response.json())
       .then(response =>
-        dispatch(receiveTeam(response.sheets.Teams))
+        dispatch(receiveTeam(response.sheets.Players))
       )
 	}
 }

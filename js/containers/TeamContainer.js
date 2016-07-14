@@ -9,12 +9,14 @@ class TeamContainer extends Component {
   componentWillMount() {
     console.log('will mount team')
 
-    const { actions } = this.props;
-    actions.fetchTeam();
+    const { actions, params } = this.props;
+    actions.fetchTeam(params.team);
 	}
 
   render() {
     console.log('TeamContainer', this.props)
+
+    console.log('werwer', this.props)
 
     return (
       <div>

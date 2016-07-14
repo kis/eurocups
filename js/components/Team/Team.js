@@ -16,7 +16,22 @@ class Team extends Component {
 
     return (
       <div className="team-container">
-        asdasd
+        {this.props.team.team ? this.props.team.team.map((result, i) => {
+          return <div className="player" key={i}>
+            <div className="player-group">{result.name}</div>
+            <div className="player-group">{result['date of birth']}</div>
+            <div className="player-title">{result.club}</div>
+            <div className="player-title">{result.position}</div>
+            <div className="player-title">{result.number}</div>
+            <div className="player-title">{result['goals for country']}</div>
+            <div className="player-title">{result.caps}</div>
+            <div className="player-coach clearfix">
+              <div>League</div>
+              <div>{result.league}</div>
+            </div>
+            <div className="player-bio">{result.bio}</div>
+          </div>
+        }) : <div>Loading team...</div>}
       </div>
     );
   }
