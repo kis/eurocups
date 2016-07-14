@@ -6,6 +6,7 @@ var config = require('./webpack.config');
 var compiler = webpack(config);
 
 var server = new WebpackDevServer(compiler, {
+	historyApiFallback: true,
 	publicPath: config.output.publicPath,
 	contentBase: 'dist',
   	hot: true,

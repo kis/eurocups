@@ -12,6 +12,8 @@ class Team extends Component {
   }
 
   render() {
+    console.log('Team', this.props)
+
     return (
       <div className="team-container">
         asdasd

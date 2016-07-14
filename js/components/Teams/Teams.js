@@ -22,6 +22,8 @@ class Teams extends Component {
 	}
 
 	render() {
+		console.log('Teams', this.props)
+
 		return (
 			<div className="teams-container">
 				{this.props.teams.teams ? this.props.teams.teams.map((result, i) => {
@@ -38,6 +40,7 @@ class Teams extends Component {
 							<div>{result['FIFA ranking']}</div>
 						</div>
 					</div></Link>
+					{this.props.children}
 				}) : <div>Loading...</div>}
 			</div>
 		);

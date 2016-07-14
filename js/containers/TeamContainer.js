@@ -14,11 +14,13 @@ class TeamContainer extends Component {
 	}
 
   render() {
+    console.log('TeamContainer', this.props)
     // <Team {...this.props}
+    // team={this.props.team} actions={this.props.actions}
 
     return (
       <div>
-        <Team team={this.props.team} actions={this.props.actions} />
+        <Team {...this.props} />
       </div>
     )
   }

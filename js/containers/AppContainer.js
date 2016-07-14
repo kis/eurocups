@@ -7,6 +7,8 @@ import TeamsContainer from './TeamsContainer';
 
 class AppContainer extends Component {
   render() {
+  	console.log('AppContainer', this.props)
+
     return (
       <div>
         <TeamsContainer />

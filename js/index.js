@@ -10,8 +10,7 @@ import TeamContainer from './containers/TeamsContainer';
 
 const routes = {
   path: '/',
-  component: AppContainer,
-  indexRoute: { component: TeamsContainer },
+  component: TeamsContainer,
   childRoutes: [
     { path: '/team', component: TeamContainer }
   ]
