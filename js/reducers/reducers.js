@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import * as actions from '../actions/actions';
 
 var initTeams = {
   activeGroupFilter: 'SHOW ALL',
@@ -40,9 +39,24 @@ function team(state = initTeam, action) {
   }
 }
 
+var initStandings = {
+  standings: null
+};
+
+function standings(state = initStandings, action) {
+  switch (action.type) {
+    case 'RECEIVE_STANDINGS':
+    return {...state, standings: action.standings};
+
+    default:
+    return {...state};
+  }
+}
+
 const euroApp = combineReducers({
   teams,
-  team
+  team,
+  standings
 });
 
 export default euroApp;

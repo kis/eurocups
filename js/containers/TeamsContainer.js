@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
+import Groups from '../components/Groups/Groups';
 import Teams from '../components/Teams/Teams';
 
 class TeamsContainer extends Component {
@@ -16,6 +17,7 @@ class TeamsContainer extends Component {
 
     return (
       <div>
+        <Groups {...this.props} />
         <Teams {...this.props} />
       </div>
     )

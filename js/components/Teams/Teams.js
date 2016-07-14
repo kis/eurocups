@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
 
-import * as util from '../../util/util'; 
+import * as util from '../../util/util';
 
 import './teams.css';
 
@@ -27,26 +26,14 @@ class Teams extends Component {
 		this.context.router.push('/teams/' + team.toLowerCase());
 	}
 
-	filterByGroup(group) {
-		const { actions } = this.props;
-		actions.filterTeamsByGroup(group);
-	}
-
 	render() {
 		console.log('Teams', this.props)
-		// <Link to="/teams/team">Go!</Link>
 
 		var filteredTeams = this.props.teams.teams.filter((res, i) => {
 			return res.Group === this.props.teams.activeGroupFilter || this.props.teams.activeGroupFilter === "SHOW ALL";
 		});
 
 		return (
-			<div>
-				<div className="teams-groups">
-					{this.props.teams.groups.map((res, i) => {
-						return <div className={this.props.teams.activeGroupFilter === res ? "active-group" : null} key={i} onClick={this.filterByGroup.bind(this, res)}>{res}</div>
-					})}
-				</div>
 				<div className="teams-container">
 					{filteredTeams ? filteredTeams.map((result, i) => {
 						return <div className="team-item" style={util.getTeamColor()} key={i} onClick={this.openTeamView.bind(this, result.Team)}>
@@ -64,7 +51,6 @@ class Teams extends Component {
 						</div>
 					}) : <div>Loading teams...</div>}
 				</div>
-			</div>
 		);
 	}
 }

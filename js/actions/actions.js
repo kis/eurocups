@@ -54,3 +54,20 @@ export function fetchTeam(team) {
       )
 	}
 }
+
+export function receiveStandings(standings) {
+  return {
+    type: 'RECEIVE_STANDINGS',
+    standings: standings
+  }
+}
+
+export function fetchStandings() {
+	return function (dispatch) {
+		return fetch('/assets/football/uefa-euro-201616.json')
+      .then(response => response.json())
+      .then(response =>
+        dispatch(receiveStandings(response.s))
+      )
+	}
+}
