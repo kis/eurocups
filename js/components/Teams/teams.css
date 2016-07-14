@@ -18,10 +18,11 @@ body {
 	font-family: "Liberation Mono";
 
 	.team-item {
+		position: relative;
 		margin: 10px;
 		padding: 10px;
 		width: 300px;
-		height: auto;
+		height: 350px;
 		color: rgba(0,53,5,0.9);
 		background-color: rgba(64,146,0,0.5);
 		font-weight: bold;
@@ -64,7 +65,10 @@ body {
 		}
 
 		.team-rank {
-			margin: 15px 5px;
+			position: absolute;
+			bottom: 10px;
+			width: 290px;
+			margin: 5px 5px;
 
 			div:first-child {
 				display: inline-block;

@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import * as util from '../../util/util'; 
+
 import './team.css';
 
 class Team extends Component {
@@ -17,7 +19,7 @@ class Team extends Component {
     return (
       <div className="team-container">
         {this.props.team.team ? this.props.team.team.map((result, i) => {
-          return <div className="player" key={i}>
+          return <div className="player" style={util.getTeamColor()} key={i}>
             <div className="player-group">{result.name}</div>
             <div className="player-group">{result['date of birth']}</div>
             <div className="player-title">{result.club}</div>

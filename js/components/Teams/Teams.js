@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
+import * as util from '../../util/util'; 
+
 import './teams.css';
 
 class Teams extends Component {
@@ -31,7 +33,7 @@ class Teams extends Component {
 		return (
 			<div className="teams-container">
 				{this.props.teams.teams ? this.props.teams.teams.map((result, i) => {
-					return <div className="team-item" key={i} onClick={this.openTeamView.bind(this, result.Team)}>
+					return <div className="team-item" style={util.getTeamColor()} key={i} onClick={this.openTeamView.bind(this, result.Team)}>
 						<div className="team-group">{result.Group}</div>
 						<div className="team-title">{result.Team}</div>
 						<div className="team-coach clearfix">
