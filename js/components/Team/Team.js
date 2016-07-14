@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react';
 
 import './team.css';
 
-const propTypes = {
-  team: PropTypes.object.isRequired
-};
-
 class Team extends Component {
   constructor(props) {
     super(props);
+  }
+
+  static propTypes = {
+    team: PropTypes.object.isRequired
   }
 
   render() {
@@ -21,7 +21,5 @@ class Team extends Component {
     );
   }
 }
-
-Team.propTypes = propTypes;
 
 export default Team;

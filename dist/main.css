@@ -1,3 +1,13 @@
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  content: "";
+  clear: both;
+  height: 0; }
+
+body {
+  background-color: rgba(64, 146, 0, 0.2); }
+
 .teams-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,12 +21,44 @@
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  font-family: "Arial Black", Gadget, sans-serif; }
+  font-family: "Liberation Mono"; }
   .teams-container .team-item {
+    margin: 10px;
     padding: 10px;
     width: 300px;
-    background-color: yellow; }
-    .teams-container .team-item .team-title {
+    height: auto;
+    color: rgba(0, 53, 5, 0.9);
+    background-color: rgba(64, 146, 0, 0.5);
+    font-weight: bold; }
+    .teams-container .team-item:hover {
+      background-color: #409200;
+      color: #003505;
       cursor: pointer; }
-      .teams-container .team-item .team-title:hover {
-        color: white; }
+    .teams-container .team-item .team-group {
+      margin: 15px 5px;
+      font-size: 24px;
+      text-align: center; }
+    .teams-container .team-item .team-title {
+      text-align: center;
+      cursor: pointer; }
+    .teams-container .team-item .team-coach {
+      margin: 15px 5px;
+      color: black; }
+      .teams-container .team-item .team-coach div:first-child {
+        display: inline-block;
+        float: left; }
+      .teams-container .team-item .team-coach div:last-child {
+        display: inline-block;
+        float: right; }
+    .teams-container .team-item .team-bio {
+      margin: 15px 5px;
+      color: black;
+      font-weight: normal; }
+    .teams-container .team-item .team-rank {
+      margin: 15px 5px; }
+      .teams-container .team-item .team-rank div:first-child {
+        display: inline-block;
+        float: left; }
+      .teams-container .team-item .team-rank div:last-child {
+        display: inline-block;
+        float: right; }

@@ -15,8 +15,8 @@ module.exports = {
   context: appContext,
   entry: [
     './js/index',
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080/'
+    // 'webpack/hot/dev-server',
+    // 'webpack-dev-server/client?http://localhost:8080/'
   ],
   output: {
     path: path.resolve(__dirname, "./dist"),

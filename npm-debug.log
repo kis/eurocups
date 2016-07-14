@@ -1,48 +1,24 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'run',
-1 verbose cli   'start-dev' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'dev-unix' ]
 2 info using npm@3.6.0
 3 info using node@v5.5.0
-4 verbose run-script [ 'prestart-dev', 'start-dev', 'poststart-dev' ]
-5 info lifecycle chess@0.0.1~prestart-dev: chess@0.0.1
-6 silly lifecycle chess@0.0.1~prestart-dev: no script for prestart-dev, continuing
-7 info lifecycle chess@0.0.1~start-dev: chess@0.0.1
-8 verbose lifecycle chess@0.0.1~start-dev: unsafe-perm in lifecycle true
-9 verbose lifecycle chess@0.0.1~start-dev: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/user/proj/euro16/node_modules/.bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-10 verbose lifecycle chess@0.0.1~start-dev: CWD: /home/user/proj/euro16
-11 silly lifecycle chess@0.0.1~start-dev: Args: [ '-c', 'export NODE_ENV=development&&webpack&&node server' ]
-12 silly lifecycle chess@0.0.1~start-dev: Returned: code: 1  signal: null
-13 info lifecycle chess@0.0.1~start-dev: Failed to exec start-dev script
-14 verbose stack Error: chess@0.0.1 start-dev: `export NODE_ENV=development&&webpack&&node server`
-14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
-14 verbose stack     at emitTwo (events.js:100:13)
-14 verbose stack     at EventEmitter.emit (events.js:185:7)
-14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-14 verbose stack     at emitTwo (events.js:100:13)
-14 verbose stack     at ChildProcess.emit (events.js:185:7)
-14 verbose stack     at maybeClose (internal/child_process.js:821:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
-15 verbose pkgid chess@0.0.1
-16 verbose cwd /home/user/proj/euro16
-17 error Linux 3.19.0-64-generic
-18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start-dev"
-19 error node v5.5.0
-20 error npm  v3.6.0
-21 error code ELIFECYCLE
-22 error chess@0.0.1 start-dev: `export NODE_ENV=development&&webpack&&node server`
-22 error Exit status 1
-23 error Failed at the chess@0.0.1 start-dev script 'export NODE_ENV=development&&webpack&&node server'.
-23 error Make sure you have the latest version of node.js and npm installed.
-23 error If you do, this is most likely a problem with the chess package,
-23 error not with npm itself.
-23 error Tell the author that this fails on your system:
-23 error     export NODE_ENV=development&&webpack&&node server
-23 error You can get information on how to open an issue for this project with:
-23 error     npm bugs chess
-23 error Or if that isn't available, you can get their info via:
-23 error     npm owner ls chess
-23 error There is likely additional logging output above.
-24 verbose exit [ 1, true ]
+4 verbose stack Error: missing script: dev-unix
+4 verbose stack     at run (/usr/local/lib/node_modules/npm/lib/run-script.js:147:19)
+4 verbose stack     at /usr/local/lib/node_modules/npm/lib/run-script.js:57:5
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
+4 verbose stack     at checkBinReferences_ (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
+4 verbose stack     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
+4 verbose stack     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:232:12
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:76:16
+4 verbose stack     at tryToString (fs.js:414:3)
+4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:401:12)
+5 verbose cwd /home/user/proj/euro16
+6 error Linux 3.19.0-64-generic
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "dev-unix"
+8 error node v5.5.0
+9 error npm  v3.6.0
+10 error missing script: dev-unix
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
