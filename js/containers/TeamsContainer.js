@@ -13,8 +13,6 @@ class TeamsContainer extends Component {
 
   render() {
     console.log('TeamsContainer', this.props)
-    // <Teams {...this.props}
-    // teams={this.props.teams} actions={this.props.actions}
 
     return (
       <div>

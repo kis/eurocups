@@ -3,18 +3,25 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-import TeamsContainer from './TeamsContainer';
-
 class AppContainer extends Component {
-  render() {
-  	console.log('AppContainer', this.props)
 
-    return (
-      <div>
-        <TeamsContainer />
-      </div>
-    )
-  }
+	static contextTypes = {
+    	router: React.PropTypes.object
+  	}
+
+	componentWillMount() {
+		this.context.router.push('/teams');
+	}
+
+	render() {
+		console.log('AppContainer', this.props)
+
+	  	return (
+	    	<div>
+	    		{this.props.children}
+	    	</div>
+	 	)
+	}
 }
 
 const mapStateToProps = (state) => ({});

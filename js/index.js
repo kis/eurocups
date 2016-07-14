@@ -6,13 +6,14 @@ import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'reac
 
 import AppContainer from './containers/AppContainer';
 import TeamsContainer from './containers/TeamsContainer';
-import TeamContainer from './containers/TeamsContainer';
+import TeamContainer from './containers/TeamContainer';
 
 const routes = {
   path: '/',
-  component: TeamsContainer,
+  component: AppContainer,
   childRoutes: [
-    { path: '/team', component: TeamContainer }
+  	{ path: '/teams', component: TeamsContainer },
+    { path: '/teams/:team', component: TeamContainer }
   ]
 };
 
