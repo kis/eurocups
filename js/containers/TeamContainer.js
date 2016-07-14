@@ -7,8 +7,6 @@ import Team from '../components/Team/Team';
 
 class TeamContainer extends Component {
   componentWillMount() {
-    console.log('will mount team')
-
     const { actions, params } = this.props;
     actions.fetchTeam(params.team);
 	}

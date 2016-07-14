@@ -24,11 +24,10 @@ body {
 		width: 300px;
 		height: 350px;
 		color: rgba(0,53,5,0.9);
-		background-color: rgba(64,146,0,0.5);
 		font-weight: bold;
 
 		&:hover {
-			background-color: rgba(64,146,0,1);
+			opacity: 1 !important;
 			color: rgba(0,53,5,1);
 			cursor: pointer;
 		}

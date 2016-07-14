@@ -8,6 +8,7 @@ export function getTeamColor() {
 	let bCol = col();
 
 	return {
-		background: `rgba( ${rCol}, ${gCol}, ${bCol}, 0.5)`
+		background: `rgba( ${rCol}, ${gCol}, ${bCol}, 1)`,
+		opacity: 0.7
 	};
 }
