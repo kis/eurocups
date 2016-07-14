@@ -44,7 +44,7 @@ class Teams extends Component {
 			<div>
 				<div className="teams-groups">
 					{this.props.teams.groups.map((res, i) => {
-						return <div key={i} onClick={this.filterByGroup.bind(this, res)}>{res}</div>
+						return <div className={this.props.teams.activeGroupFilter === res ? "active-group" : null} key={i} onClick={this.filterByGroup.bind(this, res)}>{res}</div>
 					})}
 				</div>
 				<div className="teams-container">

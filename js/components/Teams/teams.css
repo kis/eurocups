@@ -30,6 +30,10 @@ body {
 			cursor: pointer;
 			background: rgba(165,17,0,1);
 		}
+
+		&.active-group {
+			background: rgba(165,17,0,1);
+		}
 	}
 }
 
