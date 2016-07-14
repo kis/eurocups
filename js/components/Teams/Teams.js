@@ -23,6 +23,7 @@ class Teams extends Component {
 	}
 
 	openTeamView(team) {
+		team = team.replace(/\s/g, '-');
 		this.context.router.push('/teams/' + team.toLowerCase());
 	}
 
@@ -36,7 +37,7 @@ class Teams extends Component {
 		// <Link to="/teams/team">Go!</Link>
 
 		var filteredTeams = this.props.teams.teams.filter((res, i) => {
-			return res.Group === this.props.teams.activeGroupFilter;
+			return res.Group === this.props.teams.activeGroupFilter || this.props.teams.activeGroupFilter === "SHOW ALL";
 		});
 
 		return (

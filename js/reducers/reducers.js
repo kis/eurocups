@@ -2,8 +2,8 @@ import { combineReducers } from 'redux';
 import * as actions from '../actions/actions';
 
 var initTeams = {
-  activeGroupFilter: 'A',
-  groups: ['A', 'B', 'C', 'D', 'E', 'F'],
+  activeGroupFilter: 'SHOW ALL',
+  groups: ['SHOW ALL', 'A', 'B', 'C', 'D', 'E', 'F'],
   teams: []
 };
 
