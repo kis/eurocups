@@ -10,6 +10,29 @@ body {
 	background-color: rgba(64,146,0,0.2);
 }
 
+.teams-groups {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+
+	div {
+		margin: 10px;
+		padding: 10px;
+		width: auto;
+		height: auto;
+		padding: 20px 35px;
+		background: rgba(165,17,0,0.8);
+		color: white;
+
+		&:hover {
+			cursor: pointer;
+			background: rgba(165,17,0,1);
+		}
+	}
+}
+
 .teams-container {
 	display: flex;
 	flex-direction: row;

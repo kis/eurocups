@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import * as actions from '../actions/actions';
 
 var initTeams = {
-  started: false,
+  activeGroupFilter: 'A',
+  groups: ['A', 'B', 'C', 'D', 'E', 'F'],
   teams: []
 };
 
@@ -13,6 +14,9 @@ function teams(state = initTeams, action) {
 
     case 'RECEIVE_TEAMS':
     return {...state, teams: action.teams};
+
+    case 'FILTER_TEAMS':
+    return {...state, activeGroupFilter: action.group};
 
     default:
     return {...state};

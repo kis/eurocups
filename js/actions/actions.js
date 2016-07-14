@@ -12,6 +12,13 @@ export function receiveTeams(teams) {
   }
 }
 
+export function filterTeamsByGroup(group) {
+  return {
+    type: 'FILTER_TEAMS',
+    group: group
+  }
+}
+
 export function fetchTeams() {
 	return function (dispatch) {
 		// dispatch(requestTeams(null))
