@@ -17,12 +17,34 @@ class Standings extends Component {
   	}
 
   	renderGroup(group, data) {
-  		console.log('asdasd', data)
-  		return data.map((key, i) => {
-  			return <div key={i}>
-  				<div>{ key.team }</div>
-  			</div>
-  		});
+  		return (
+  			<div>
+	  			<div className="group-table-header">
+	  				<div>Team</div>
+	  				<div>Conceded</div>
+	  				<div>Draws</div>
+	  				<div>Goal difference</div>
+	  				<div>Losts</div>
+	  				<div>Macthes played</div>
+	  				<div>Points</div>
+	  				<div>Scores</div>
+	  				<div>Wins</div>
+	  			</div>
+	  			{ data.map((key, i) => {
+		  			return <div key={i} className="group-table-line">
+		  				<div>{ key.team }</div>
+		  				<div>{ key.stats.conceded }</div>
+		  				<div>{ key.stats.draws }</div>
+		  				<div>{ key.stats.goal_difference }</div>
+		  				<div>{ key.stats.losts }</div>
+		  				<div>{ key.stats.macthes_played }</div>
+		  				<div>{ key.stats.points }</div>
+		  				<div>{ key.stats.scores }</div>
+		  				<div>{ key.stats.wins }</div>
+		  			</div>
+		  		})}
+		  	</div>
+  		);
   	}
 
 	render() {
