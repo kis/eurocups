@@ -1,0 +1,13 @@
+[ignore]
+.*/node_modules/*
+.*/assets/*
+.*/dist/*
+
+[include]
+
+[libs]
+
+[options]
+
+[version]
+0.29.0

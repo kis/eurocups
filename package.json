@@ -4,7 +4,8 @@
   "description": "euro16",
   "scripts": {
     "start-dev": "export NODE_ENV=development&&webpack&&node server",
-    "start-prod": "export NODE_ENV=production&&webpack&&node server"
+    "start-prod": "export NODE_ENV=production&&webpack&&node server",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "dependencies": {
     "autoprefixer": "^6.3.4",
@@ -31,5 +32,8 @@
     "webpack-dev-server": "^1.12.1",
     "whatwg-fetch": "^1.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.29.0"
+  }
 }
