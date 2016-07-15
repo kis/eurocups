@@ -22,12 +22,10 @@ class Options extends Component {
 	}
 
 	render() {
-		console.log('asdasd', this.props.teams)
-
 		return (
 		    <div className="options-container">
-		    	<div className={this.props.teams.isTeamsActive ? "active-option" : null} onClick={this.toggleTeams.bind(this)}>SHOW TEAMS</div>
-		    	<div className={this.props.teams.isStandingsActive ? "active-option" : null} onClick={this.toggleStandings.bind(this)}>SHOW STANDINGS</div>
+		    	<div className={this.props.teams.showTeams ? "active-option" : null} onClick={this.toggleTeams.bind(this)}>SHOW TEAMS</div>
+		    	<div className={this.props.teams.showStandings ? "active-option" : null} onClick={this.toggleStandings.bind(this)}>SHOW STANDINGS</div>
 			</div>
 		);
 	}

@@ -3,8 +3,8 @@ import { combineReducers } from 'redux';
 var initTeams = {
   activeGroupFilter: 'SHOW ALL',
   groups: ['SHOW ALL', 'A', 'B', 'C', 'D', 'E', 'F'],
-  isTeamsActive: true,
-  isStandingsActive: false,
+  showTeams: true,
+  showStandings: false,
   teams: []
 };
 
@@ -20,10 +20,10 @@ function teams(state = initTeams, action) {
     return {...state, activeGroupFilter: action.group};
 
     case 'TOGGLE_TEAMS':
-    return {...state, isTeamsActive: !state.isTeamsActive};
+    return {...state, showTeams: !state.showTeams};
 
     case 'TOGGLE_STANDINGS':
-    return {...state, isStandingsActive: !state.isStandingsActive};
+    return {...state, showStandings: !state.showStandings};
 
     default:
     return {...state};

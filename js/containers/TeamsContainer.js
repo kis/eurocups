@@ -20,7 +20,7 @@ class TeamsContainer extends Component {
       <div>
         <Options {...this.props} />
         <Groups {...this.props} />
-        <Teams {...this.props} />
+        { this.props.teams.showTeams ? <Teams  {...this.props} /> : null }
       </div>
     )
   }
