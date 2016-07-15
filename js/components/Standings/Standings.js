@@ -8,16 +8,16 @@ class Standings extends Component {
 	}
 
 	static propTypes = {
-  	standings: PropTypes.object.isRequired
-  }
+  		standings: PropTypes.object.isRequired
+  	}
 
 	render() {
 		return (
 		    <div className="standings">
-					{this.props.standings.map((res, i) => {
-						return <div key={i}>{res}</div>
-					})}
-				</div>
+				{this.props.standings.map((res, i) => {
+					return <div key={i}>{res}</div>
+				})}
+			</div>
 		);
 	}
 }

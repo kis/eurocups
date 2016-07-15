@@ -55,6 +55,18 @@ export function fetchTeam(team) {
 	}
 }
 
+export function toggleTeams() {
+  return {
+    type: 'TOGGLE_TEAMS'
+  }
+}
+
+export function toggleStandings() {
+  return {
+    type: 'TOGGLE_STANDINGS'
+  }
+}
+
 export function receiveStandings(standings) {
   return {
     type: 'RECEIVE_STANDINGS',

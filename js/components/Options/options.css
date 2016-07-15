@@ -1,4 +1,4 @@
-.teams-groups {
+.options-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -20,7 +20,7 @@
 			background: rgba(165,17,0,1);
 		}
 
-		&.active-group {
+		&.active-option {
 			background: rgba(165,17,0,1);
 		}
 	}

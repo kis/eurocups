@@ -8,8 +8,8 @@ class Groups extends Component {
 	}
 
 	static propTypes = {
-  	teams: PropTypes.object.isRequired
-  }
+  		teams: PropTypes.object.isRequired
+  	}
 
 	filterByGroup(group) {
 		const { actions } = this.props;
@@ -19,10 +19,10 @@ class Groups extends Component {
 	render() {
 		return (
 		    <div className="teams-groups">
-					{this.props.teams.groups.map((res, i) => {
-						return <div className={this.props.teams.activeGroupFilter === res ? "active-group" : null} key={i} onClick={this.filterByGroup.bind(this, res)}>{res}</div>
-					})}
-				</div>
+				{this.props.teams.groups.map((res, i) => {
+					return <div className={this.props.teams.activeGroupFilter === res ? "active-group" : null} key={i} onClick={this.filterByGroup.bind(this, res)}>{res}</div>
+				})}
+			</div>
 		);
 	}
 }
