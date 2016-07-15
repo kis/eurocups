@@ -32,8 +32,6 @@ class Teams extends Component {
 	}
 
 	render() {
-		console.log('Teams', this.props)
-
 		var filteredTeams = this.props.teams.teams.filter((res, i) => {
 			return res.Group === this.props.teams.activeGroupFilter || this.props.teams.activeGroupFilter === "SHOW ALL";
 		});

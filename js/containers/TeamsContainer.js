@@ -10,14 +10,14 @@ import Standings from '../components/Standings/Standings';
 
 class TeamsContainer extends Component {
   render() {
-    console.log('TeamsContainer', this.props)
+    const { teams } = this.props;
 
     return (
       <div>
         <Options {...this.props} />
-        <Groups {...this.props} />
-        { this.props.teams.showTeams ? <Teams  {...this.props} /> : null }
-        { this.props.teams.showStandings ? <Standings  {...this.props} /> : null }
+        { teams.showTeams || teams.showStandings ? <Groups {...this.props} /> : null }
+        { teams.showTeams ? <Teams  {...this.props} /> : null }
+        { teams.showStandings ? <Standings  {...this.props} /> : null }
       </div>
     )
   }

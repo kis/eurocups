@@ -14,8 +14,6 @@ class Team extends Component {
   }
 
   render() {
-    console.log('Team', this.props)
-
     return (
       <div className="team-container">
         {this.props.team.team ? this.props.team.team.map((result, i) => {

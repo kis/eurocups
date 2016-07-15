@@ -12,8 +12,6 @@ class TeamContainer extends Component {
 	}
 
   render() {
-    console.log('TeamContainer', this.props)
-
     return (
       <div>
         <Team {...this.props} />

@@ -14,8 +14,6 @@ class AppContainer extends Component {
 	}
 
 	render() {
-		console.log('AppContainer', this.props)
-
 	  	return (
 	    	<div>
 	    		{this.props.children}
