@@ -32,9 +32,9 @@ class Teams extends Component {
 	}
 
 	render() {
-		var filteredTeams = this.props.teams.teams.filter((res, i) => {
+		var filteredTeams = this.props.teams.teams ? this.props.teams.teams.filter((res, i) => {
 			return res.Group === this.props.teams.activeGroupFilter || this.props.teams.activeGroupFilter === "SHOW ALL";
-		});
+		}) : null;
 
 		return (
 				<div className="teams-container">
@@ -52,7 +52,7 @@ class Teams extends Component {
 								<div>{result['FIFA ranking']}</div>
 							</div>
 						</div>
-					}) : <div>Loading teams...</div>}
+					}) : <div><h3>Loading teams...</h3></div>}
 				</div>
 		);
 	}

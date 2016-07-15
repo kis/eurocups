@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 var initTeams = {
   activeGroupFilter: 'SHOW ALL',
   groups: ['SHOW ALL', 'A', 'B', 'C', 'D', 'E', 'F'],
@@ -9,7 +7,7 @@ var initTeams = {
   standings: null
 };
 
-function teams(state = initTeams, action) {
+export default function teams(state = initTeams, action) {
   switch (action.type) {
     case 'REQUEST_TEAMS':
     return {...state, teams: action.teams};
@@ -33,27 +31,3 @@ function teams(state = initTeams, action) {
     return {...state};
   }
 }
-
-var initTeam = {
-  team: null
-};
-
-function team(state = initTeam, action) {
-  switch (action.type) {
-    case 'REQUEST_TEAM':
-    return {...state, team: action.team};
-
-    case 'RECEIVE_TEAM':
-    return {...state, team: action.team};
-
-    default:
-    return {...state};
-  }
-}
-
-const euroApp = combineReducers({
-  teams,
-  team
-});
-
-export default euroApp;

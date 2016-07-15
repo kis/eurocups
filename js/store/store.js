@@ -1,4 +1,4 @@
-import euroApp from '../reducers/reducers';
+import euroApp from '../reducers/index';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
