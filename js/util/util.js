@@ -1,6 +1,6 @@
 export function getTeamColor() {
 	let col = function() {
-		return Math.floor(Math.random() * (255 - 1 + 1)) + 1
+		return Math.floor(Math.random() * (255 - 1 + 1)) + 1;
 	};
 
 	let rCol = col();

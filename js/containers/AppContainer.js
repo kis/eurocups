@@ -1,23 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class AppContainer extends Component {
 
 	static contextTypes = {
-    	router: React.PropTypes.object
-  	}
+		router: React.PropTypes.object
+	}
 
 	componentWillMount() {
 		this.context.router.push('/teams');
 	}
 
 	render() {
-	  	return (
-	    	<div>
-	    		{this.props.children}
-	    	</div>
-	 	)
+		return (
+			<div>
+				{this.props.children}
+			</div>
+		);
 	}
 }
 

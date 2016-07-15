@@ -6,22 +6,22 @@ import * as actions from '../actions/team';
 import Team from '../components/Team/Team';
 
 class TeamContainer extends Component {
-  componentWillMount() {
-    const { actions, params } = this.props;
-    actions.fetchTeam(params.team);
+	componentWillMount() {
+		const { actions, params } = this.props;
+		actions.fetchTeam(params.team);
 	}
-
-  render() {
-    return (
-      <div>
-        <Team {...this.props} />
-      </div>
-    )
-  }
+	
+	render() {
+		return (
+			<div>
+				<Team {...this.props} />
+			</div>
+		);
+	}
 }
 
 const mapStateToProps = (state) => ({
-  team: state.team
+	team: state.team
 });
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});

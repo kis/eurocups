@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3c8bb59444317b238aa2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8b32d91ff04ea53fa8f1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -625,15 +625,15 @@
 	var _containersTeamContainer2 = _interopRequireDefault(_containersTeamContainer);
 
 	var routes = {
-	  path: '/',
-	  component: _containersAppContainer2['default'],
-	  childRoutes: [{ path: '/teams', component: _containersTeamsContainer2['default'] }, { path: '/teams/:team', component: _containersTeamContainer2['default'] }]
+		path: '/',
+		component: _containersAppContainer2['default'],
+		childRoutes: [{ path: '/teams', component: _containersTeamsContainer2['default'] }, { path: '/teams/:team', component: _containersTeamContainer2['default'] }]
 	};
 
 	_reactDom2['default'].render(_react2['default'].createElement(
-	  _reactRedux.Provider,
-	  { store: _storeStore2['default'] },
-	  _react2['default'].createElement(_reactRouter.Router, { routes: routes, history: _reactRouter.browserHistory })
+		_reactRedux.Provider,
+		{ store: _storeStore2['default'] },
+		_react2['default'].createElement(_reactRouter.Router, { routes: routes, history: _reactRouter.browserHistory })
 	), document.getElementsByClassName('root')[0]);
 
 /***/ },
@@ -22033,7 +22033,7 @@
 	var _interopRequireDefault = __webpack_require__(2)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 
 	var _redux = __webpack_require__(168);
@@ -22047,8 +22047,8 @@
 	var _team2 = _interopRequireDefault(_team);
 
 	var euroApp = (0, _redux.combineReducers)({
-	  teams: _teams2['default'],
-	  team: _team2['default']
+		teams: _teams2['default'],
+		team: _team2['default']
 	});
 
 	exports['default'] = euroApp;
@@ -22063,43 +22063,43 @@
 	var _extends = __webpack_require__(190)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 	exports['default'] = teams;
 	var initTeams = {
-	  activeGroupFilter: 'SHOW ALL',
-	  groups: ['SHOW ALL', 'A', 'B', 'C', 'D', 'E', 'F'],
-	  showTeams: true,
-	  showStandings: false,
-	  teams: [],
-	  standings: null
+		activeGroupFilter: 'SHOW ALL',
+		groups: ['SHOW ALL', 'A', 'B', 'C', 'D', 'E', 'F'],
+		showTeams: true,
+		showStandings: false,
+		teams: [],
+		standings: null
 	};
 
 	function teams(state, action) {
-	  if (state === undefined) state = initTeams;
+		if (state === undefined) state = initTeams;
 
-	  switch (action.type) {
-	    case 'REQUEST_TEAMS':
-	      return _extends({}, state, { teams: action.teams });
+		switch (action.type) {
+			case 'REQUEST_TEAMS':
+				return _extends({}, state, { teams: action.teams });
 
-	    case 'RECEIVE_TEAMS':
-	      return _extends({}, state, { teams: action.teams });
+			case 'RECEIVE_TEAMS':
+				return _extends({}, state, { teams: action.teams });
 
-	    case 'FILTER_TEAMS':
-	      return _extends({}, state, { activeGroupFilter: action.group });
+			case 'FILTER_TEAMS':
+				return _extends({}, state, { activeGroupFilter: action.group });
 
-	    case 'RECEIVE_STANDINGS':
-	      return _extends({}, state, { standings: action.standings });
+			case 'RECEIVE_STANDINGS':
+				return _extends({}, state, { standings: action.standings });
 
-	    case 'TOGGLE_TEAMS':
-	      return _extends({}, state, { showTeams: !state.showTeams });
+			case 'TOGGLE_TEAMS':
+				return _extends({}, state, { showTeams: !state.showTeams });
 
-	    case 'TOGGLE_STANDINGS':
-	      return _extends({}, state, { showStandings: !state.showStandings });
+			case 'TOGGLE_STANDINGS':
+				return _extends({}, state, { showStandings: !state.showStandings });
 
-	    default:
-	      return _extends({}, state);
-	  }
+			default:
+				return _extends({}, state);
+		}
 	}
 
 	module.exports = exports['default'];
@@ -22368,26 +22368,26 @@
 	var _extends = __webpack_require__(190)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 	exports['default'] = team;
 	var initTeam = {
-	  team: null
+		team: null
 	};
 
 	function team(state, action) {
-	  if (state === undefined) state = initTeam;
+		if (state === undefined) state = initTeam;
 
-	  switch (action.type) {
-	    case 'REQUEST_TEAM':
-	      return _extends({}, state, { team: action.team });
+		switch (action.type) {
+			case 'REQUEST_TEAM':
+				return _extends({}, state, { team: action.team });
 
-	    case 'RECEIVE_TEAM':
-	      return _extends({}, state, { team: action.team });
+			case 'RECEIVE_TEAM':
+				return _extends({}, state, { team: action.team });
 
-	    default:
-	      return _extends({}, state);
-	  }
+			default:
+				return _extends({}, state);
+		}
 	}
 
 	module.exports = exports['default'];
@@ -28117,8 +28117,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _redux = __webpack_require__(168);
-
 	var _reactRedux = __webpack_require__(161);
 
 	var AppContainer = (function (_Component) {
@@ -28146,10 +28144,9 @@
 			}
 		}], [{
 			key: 'contextTypes',
-			value: {
-				router: _react2['default'].PropTypes.object
-			},
-			enumerable: true
+			value: function contextTypes() {
+				router: _react2['default'].PropTypes.object;
+			}
 		}]);
 
 		return AppContainer;
@@ -28451,17 +28448,15 @@
 
 	var _classCallCheck = __webpack_require__(288)['default'];
 
-	var _interopRequireDefault = __webpack_require__(2)['default'];
-
 	var _interopRequireWildcard = __webpack_require__(290)['default'];
 
+	var _interopRequireDefault = __webpack_require__(2)['default'];
+
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
-
-	var _react2 = _interopRequireDefault(_react);
 
 	var _redux = __webpack_require__(168);
 
@@ -28488,41 +28483,41 @@
 	var _componentsStandingsStandings2 = _interopRequireDefault(_componentsStandingsStandings);
 
 	var TeamsContainer = (function (_Component) {
-	  _inherits(TeamsContainer, _Component);
+		_inherits(TeamsContainer, _Component);
 
-	  function TeamsContainer() {
-	    _classCallCheck(this, TeamsContainer);
+		function TeamsContainer() {
+			_classCallCheck(this, TeamsContainer);
 
-	    _get(Object.getPrototypeOf(TeamsContainer.prototype), 'constructor', this).apply(this, arguments);
-	  }
+			_get(Object.getPrototypeOf(TeamsContainer.prototype), 'constructor', this).apply(this, arguments);
+		}
 
-	  _createClass(TeamsContainer, [{
-	    key: 'render',
-	    value: function render() {
-	      var teams = this.props.teams;
+		_createClass(TeamsContainer, [{
+			key: 'render',
+			value: function render() {
+				var teams = this.props.teams;
 
-	      return _react2['default'].createElement(
-	        'div',
-	        null,
-	        _react2['default'].createElement(_componentsOptionsOptions2['default'], this.props),
-	        teams.showTeams || teams.showStandings ? _react2['default'].createElement(_componentsGroupsGroups2['default'], this.props) : null,
-	        teams.showTeams ? _react2['default'].createElement(_componentsTeamsTeams2['default'], this.props) : null,
-	        teams.showStandings ? _react2['default'].createElement(_componentsStandingsStandings2['default'], this.props) : null
-	      );
-	    }
-	  }]);
+				return React.createElement(
+					'div',
+					null,
+					React.createElement(_componentsOptionsOptions2['default'], this.props),
+					teams.showTeams || teams.showStandings ? React.createElement(_componentsGroupsGroups2['default'], this.props) : null,
+					teams.showTeams ? React.createElement(_componentsTeamsTeams2['default'], this.props) : null,
+					teams.showStandings ? React.createElement(_componentsStandingsStandings2['default'], this.props) : null
+				);
+			}
+		}]);
 
-	  return TeamsContainer;
+		return TeamsContainer;
 	})(_react.Component);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    teams: state.teams
-	  };
+		return {
+			teams: state.teams
+		};
 	};
 
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };
+		return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };
 	};
 
 	exports['default'] = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(TeamsContainer);
@@ -28701,10 +28696,9 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: {
-				teams: _react.PropTypes.object.isRequired
-			},
-			enumerable: true
+			value: function propTypes() {
+				teams: _react.PropTypes.object.isRequired;
+			}
 		}]);
 
 		return Options;
@@ -28780,10 +28774,9 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: {
-				teams: _react.PropTypes.object.isRequired
-			},
-			enumerable: true
+			value: function propTypes() {
+				teams: _react.PropTypes.object.isRequired;
+			}
 		}]);
 
 		return Groups;
@@ -29110,16 +29103,14 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: {
-				teams: _react.PropTypes.object.isRequired
-			},
-			enumerable: true
+			value: function propTypes() {
+				teams: _react.PropTypes.object.isRequired;
+			}
 		}, {
 			key: 'contextTypes',
-			value: {
-				router: _react2['default'].PropTypes.object
-			},
-			enumerable: true
+			value: function contextTypes() {
+				router: _react2['default'].PropTypes.object;
+			}
 		}]);
 
 		return Standings;
@@ -29179,7 +29170,7 @@
 	var _interopRequireWildcard = __webpack_require__(290)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
@@ -29199,45 +29190,45 @@
 	var _componentsTeamTeam2 = _interopRequireDefault(_componentsTeamTeam);
 
 	var TeamContainer = (function (_Component) {
-	  _inherits(TeamContainer, _Component);
+		_inherits(TeamContainer, _Component);
 
-	  function TeamContainer() {
-	    _classCallCheck(this, TeamContainer);
+		function TeamContainer() {
+			_classCallCheck(this, TeamContainer);
 
-	    _get(Object.getPrototypeOf(TeamContainer.prototype), 'constructor', this).apply(this, arguments);
-	  }
+			_get(Object.getPrototypeOf(TeamContainer.prototype), 'constructor', this).apply(this, arguments);
+		}
 
-	  _createClass(TeamContainer, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      var _props = this.props;
-	      var actions = _props.actions;
-	      var params = _props.params;
+		_createClass(TeamContainer, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				var _props = this.props;
+				var actions = _props.actions;
+				var params = _props.params;
 
-	      actions.fetchTeam(params.team);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement(
-	        'div',
-	        null,
-	        _react2['default'].createElement(_componentsTeamTeam2['default'], this.props)
-	      );
-	    }
-	  }]);
+				actions.fetchTeam(params.team);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2['default'].createElement(
+					'div',
+					null,
+					_react2['default'].createElement(_componentsTeamTeam2['default'], this.props)
+				);
+			}
+		}]);
 
-	  return TeamContainer;
+		return TeamContainer;
 	})(_react.Component);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	  return {
-	    team: state.team
-	  };
+		return {
+			team: state.team
+		};
 	};
 
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-	  return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };
+		return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };
 	};
 
 	exports['default'] = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(TeamContainer);
@@ -29300,7 +29291,7 @@
 	var _interopRequireWildcard = __webpack_require__(290)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(3);
@@ -29314,95 +29305,94 @@
 	__webpack_require__(307);
 
 	var Team = (function (_Component) {
-	  _inherits(Team, _Component);
+		_inherits(Team, _Component);
 
-	  function Team(props) {
-	    _classCallCheck(this, Team);
+		function Team(props) {
+			_classCallCheck(this, Team);
 
-	    _get(Object.getPrototypeOf(Team.prototype), 'constructor', this).call(this, props);
-	  }
+			_get(Object.getPrototypeOf(Team.prototype), 'constructor', this).call(this, props);
+		}
 
-	  _createClass(Team, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2['default'].createElement(
-	        'div',
-	        { className: 'team-container' },
-	        this.props.team.team ? this.props.team.team.map(function (result, i) {
-	          return _react2['default'].createElement(
-	            'div',
-	            { className: 'player', style: util.getTeamColor(), key: i },
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-group' },
-	              result.name
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-group' },
-	              result['date of birth']
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-title' },
-	              result.club
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-title' },
-	              result.position
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-title' },
-	              result.number
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-title' },
-	              result['goals for country']
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-title' },
-	              result.caps
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-coach clearfix' },
-	              _react2['default'].createElement(
-	                'div',
-	                null,
-	                'League'
-	              ),
-	              _react2['default'].createElement(
-	                'div',
-	                null,
-	                result.league
-	              )
-	            ),
-	            _react2['default'].createElement(
-	              'div',
-	              { className: 'player-bio' },
-	              result.bio
-	            )
-	          );
-	        }) : _react2['default'].createElement(
-	          'div',
-	          null,
-	          'Loading team...'
-	        )
-	      );
-	    }
-	  }], [{
-	    key: 'propTypes',
-	    value: {
-	      team: _react.PropTypes.object.isRequired
-	    },
-	    enumerable: true
-	  }]);
+		_createClass(Team, [{
+			key: 'render',
+			value: function render() {
+				return _react2['default'].createElement(
+					'div',
+					{ className: 'team-container' },
+					this.props.team.team ? this.props.team.team.map(function (result, i) {
+						return _react2['default'].createElement(
+							'div',
+							{ className: 'player', style: util.getTeamColor(), key: i },
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-group' },
+								result.name
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-group' },
+								result['date of birth']
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-title' },
+								result.club
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-title' },
+								result.position
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-title' },
+								result.number
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-title' },
+								result['goals for country']
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-title' },
+								result.caps
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-coach clearfix' },
+								_react2['default'].createElement(
+									'div',
+									null,
+									'League'
+								),
+								_react2['default'].createElement(
+									'div',
+									null,
+									result.league
+								)
+							),
+							_react2['default'].createElement(
+								'div',
+								{ className: 'player-bio' },
+								result.bio
+							)
+						);
+					}) : _react2['default'].createElement(
+						'div',
+						null,
+						'Loading team...'
+					)
+				);
+			}
+		}], [{
+			key: 'propTypes',
+			value: function propTypes() {
+				team: _react.PropTypes.object.isRequired;
+			}
+		}]);
 
-	  return Team;
+		return Team;
 	})(_react.Component);
 
 	exports['default'] = Team;
