@@ -8,7 +8,7 @@
 	.group-container {
 		margin: 10px;
 		padding: 10px;
-		width: 1295px;
+		width: 1495px;
 		height: auto;
 		padding: 0px 0px 15px 0px;
 		background: rgb(48, 73, 84);
@@ -23,8 +23,6 @@
 		}
 		
 		.group-table {
-			width: 1295px;
-
 			.group-table-header {
 				font-weight: bold;
 				background: #5a8ca0;
@@ -54,7 +52,7 @@
 
 					&:not(:first-child) {
 						text-align: center;
-						width: 90px;
+						width: 115px;
 					}
 				}
 			}

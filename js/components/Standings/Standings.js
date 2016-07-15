@@ -11,36 +11,35 @@ class Standings extends Component {
   		teams: PropTypes.object.isRequired
   	}
 
+  	static contextTypes = {
+  	  	router: React.PropTypes.object
+  	}
+
   	componentWillMount() {
   	    const { actions } = this.props;
   		actions.fetchStandings();
   	}
+
+  	openTeamView(team) {
+		team = team.replace(/\s/g, '-');
+		this.context.router.push('/teams/' + team.toLowerCase());
+	}
 
   	renderGroup(group, data) {
   		return (
   			<div>
 	  			<div className="group-table-header">
 	  				<div>Team</div>
-	  				<div>Conceded</div>
-	  				<div>Draws</div>
-	  				<div>Goal difference</div>
-	  				<div>Losts</div>
-	  				<div>Macthes played</div>
-	  				<div>Points</div>
-	  				<div>Scores</div>
-	  				<div>Wins</div>
+		  			{ Object.keys(data[0].stats).map((key, i) => {
+		  				return <div key={i}>{ key }</div>
+		  			})}
 	  			</div>
 	  			{ data.map((key, i) => {
-		  			return <div key={i} className="group-table-line">
+		  			return <div key={i} className="group-table-line" onClick={this.openTeamView.bind(this, key.team)}>
 		  				<div>{ key.team }</div>
-		  				<div>{ key.stats.conceded }</div>
-		  				<div>{ key.stats.draws }</div>
-		  				<div>{ key.stats.goal_difference }</div>
-		  				<div>{ key.stats.losts }</div>
-		  				<div>{ key.stats.macthes_played }</div>
-		  				<div>{ key.stats.points }</div>
-		  				<div>{ key.stats.scores }</div>
-		  				<div>{ key.stats.wins }</div>
+		  				{ Object.keys(key.stats).map((bkey, j) => {
+			  				return <div key={j}>{ key.stats[bkey] }</div>
+			  			})}
 		  			</div>
 		  		})}
 		  	</div>
