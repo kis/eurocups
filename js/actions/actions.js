@@ -79,7 +79,7 @@ export function fetchStandings() {
 		return fetch('/assets/football/uefa-euro-201616.json')
       .then(response => response.json())
       .then(response =>
-        dispatch(receiveStandings(response.s))
+        dispatch(receiveStandings(response))
       )
 	}
 }

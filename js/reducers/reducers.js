@@ -5,7 +5,8 @@ var initTeams = {
   groups: ['SHOW ALL', 'A', 'B', 'C', 'D', 'E', 'F'],
   showTeams: true,
   showStandings: false,
-  teams: []
+  teams: [],
+  standings: null
 };
 
 function teams(state = initTeams, action) {
@@ -18,6 +19,9 @@ function teams(state = initTeams, action) {
 
     case 'FILTER_TEAMS':
     return {...state, activeGroupFilter: action.group};
+
+    case 'RECEIVE_STANDINGS':
+    return {...state, standings: action.standings};
 
     case 'TOGGLE_TEAMS':
     return {...state, showTeams: !state.showTeams};
@@ -47,24 +51,9 @@ function team(state = initTeam, action) {
   }
 }
 
-var initStandings = {
-  standings: null
-};
-
-function standings(state = initStandings, action) {
-  switch (action.type) {
-    case 'RECEIVE_STANDINGS':
-    return {...state, standings: action.standings};
-
-    default:
-    return {...state};
-  }
-}
-
 const euroApp = combineReducers({
   teams,
-  team,
-  standings
+  team
 });
 
 export default euroApp;

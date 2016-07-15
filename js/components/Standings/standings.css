@@ -1,0 +1,21 @@
+.standings-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+
+	.group-container {
+		margin: 10px;
+		padding: 10px;
+		width: 85%;
+		height: auto;
+		padding: 20px 35px;
+		background: rgba(165,17,0,0.6);
+		color: white;
+		
+		.group-table {
+			
+		}
+	}
+}

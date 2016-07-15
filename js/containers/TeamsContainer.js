@@ -6,13 +6,9 @@ import * as actions from '../actions/actions';
 import Options from '../components/Options/Options';
 import Groups from '../components/Groups/Groups';
 import Teams from '../components/Teams/Teams';
+import Standings from '../components/Standings/Standings';
 
 class TeamsContainer extends Component {
-  componentWillMount() {
-    const { actions } = this.props;
-    actions.fetchTeams();
-	}
-
   render() {
     console.log('TeamsContainer', this.props)
 
@@ -21,6 +17,7 @@ class TeamsContainer extends Component {
         <Options {...this.props} />
         <Groups {...this.props} />
         { this.props.teams.showTeams ? <Teams  {...this.props} /> : null }
+        { this.props.teams.showStandings ? <Standings  {...this.props} /> : null }
       </div>
     )
   }

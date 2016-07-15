@@ -17,6 +17,11 @@ class Teams extends Component {
     	router: React.PropTypes.object
   	}
 
+  	componentWillMount() {
+  	    const { actions } = this.props;
+  		actions.fetchTeams();
+  	}
+
 	shouldComponentUpdate(nextProps, nextState) {
 		return true;
 	}
