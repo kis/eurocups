@@ -13,27 +13,40 @@ class Player extends Component {
 		team: PropTypes.object.isRequired
 	}
 
+	static contextTypes = {
+  	router: React.PropTypes.object
+  }
+
 	render() {
+		let { team } = this.props;
+
+		let playerName = this.props.routeParams.player;
+		playerName = playerName.replace('-', ' ');
+
+		let findPlayer = (player) => {
+			return player.name.toLowerCase() == playerName;
+		};
+
+		let player = team.team.find(findPlayer);
+
 		return (
 			<div className="container">
-			{this.props.team.team ? this.props.team.team.map((result, i) => {
-				return <div className="player" style={util.getTeamColor()} key={i}>
-				<div className="player-group">{result.name}</div>
-				<div className="player-group">{result['date of birth']}</div>
-				<div className="player-title">{result.club}</div>
-				<div className="player-title">{result.position}</div>
-				<div className="player-title">{result.number}</div>
-				<div className="player-title">{result['goals for country']}</div>
-				<div className="player-title">{result.caps}</div>
-				<div className="player-coach clearfix">
-				<div>League</div>
-				<div>{result.league}</div>
+				<div className="player" style={util.getTeamColor()}>
+					<div className="player-group">{player.name}</div>
+					<div className="player-group">{player['date of birth']}</div>
+					<div className="player-title">{player.club}</div>
+					<div className="player-title">{player.position}</div>
+					<div className="player-title">{player.number}</div>
+					<div className="player-title">{player['goals for country']}</div>
+					<div className="player-title">{player.caps}</div>
+					<div className="player-coach clearfix">
+						<div>League</div>
+						<div>{player.league}</div>
+					</div>
+					<div className="player-bio">{player.bio}</div>
 				</div>
-				<div className="player-bio">{result.bio}</div>
-				</div>
-			}) : <div>Loading team...</div>}
 			</div>
-			);
+		);
 	}
 }
 

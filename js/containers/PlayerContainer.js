@@ -7,7 +7,7 @@ import Player from '../components/Player/Player';
 
 class PlayerContainer extends Component {
 	render() {
-		const { teams } = this.props;
+		const { team } = this.props;
 
 		return (
 			<div>
@@ -18,7 +18,7 @@ class PlayerContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	teams: state.teams
+	team: state.team
 });
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});

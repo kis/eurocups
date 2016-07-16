@@ -65,10 +65,16 @@ body {
 				}
 			}
 
-			.player-bio, .player-profile {
+			.player-bio {
 				margin: 15px 5px;
 				color: black;
 				font-weight: normal;
+			}
+
+			.player-profile {
+				margin: 15px 5px;
+				color: #160848;
+				font-weight: bold;
 			}
 		}
 

@@ -239,7 +239,70 @@ body {
           float: left; }
         .team-container .player .player-info .player-goals div:last-child, .team-container .player .player-info .player-caps div:last-child {
           display: inline-block; }
-      .team-container .player .player-info .player-bio {
+      .team-container .player .player-info .player-bio, .team-container .player .player-info .player-profile {
         margin: 15px 5px;
         color: black;
         font-weight: normal; }
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  content: "";
+  clear: both;
+  height: 0; }
+
+body {
+  background-color: rgba(64, 146, 0, 0.2); }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Liberation Mono"; }
+  .container .player {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: auto;
+    color: rgba(0, 53, 5, 0.9);
+    font-weight: bold; }
+    .container .player:hover {
+      opacity: 1 !important;
+      color: #003505;
+      cursor: pointer; }
+    .container .player .player-group {
+      margin: 15px 5px;
+      font-size: 24px;
+      text-align: center; }
+    .container .player .player-title {
+      text-align: center;
+      cursor: pointer; }
+    .container .player .player-coach {
+      margin: 15px 5px;
+      color: black; }
+      .container .player .player-coach div:first-child {
+        display: inline-block;
+        float: left; }
+      .container .player .player-coach div:last-child {
+        display: inline-block;
+        float: right; }
+    .container .player .player-bio {
+      margin: 15px 5px;
+      color: black;
+      font-weight: normal; }
+    .container .player .player-rank {
+      margin: 15px 5px; }
+      .container .player .player-rank div:first-child {
+        display: inline-block;
+        float: left; }
+      .container .player .player-rank div:last-child {
+        display: inline-block;
+        float: right; }

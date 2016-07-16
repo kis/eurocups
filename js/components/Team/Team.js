@@ -15,9 +15,14 @@ class Team extends Component {
 		team: PropTypes.object.isRequired
 	}
 
-	openPlayerView(team, player) {
-		// team = team.replace(/\s/g, '-');
-		this.context.router.push('/teams/' + team.toLowerCase() + '/' + player.toLowerCase());
+	static contextTypes = {
+  	router: React.PropTypes.object
+  }
+
+	openPlayerView(player) {
+		player = player.replace(/\s/g, '-');
+		let link = ['/teams', this.props.routeParams.team, player.toLowerCase()].join('/');
+		this.context.router.push(link);
 	}
 
 	togglePlayerInfo(i) {
@@ -49,7 +54,7 @@ class Team extends Component {
 							<div>{result.caps}</div>
 						</div>
 						<div className="player-bio">{result.bio}</div>
-						<a href className="player-profile" onClick={this.openPlayerView.bind(this, 'asd', 'sda')}>Open Player Profile</a>
+						<div className="player-profile" onClick={this.openPlayerView.bind(this, result.name)}>Open Player Profile</div>
 					</div>
 				</div>
 			}) : <div>Loading team...</div>}

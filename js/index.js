@@ -19,13 +19,11 @@ const routes = {
 		},
 		{
 			path: '/teams/:team',
-			component: TeamContainer ,
-			childRoutes: [
-				{
-					path: '/teams/:team/:player',
-					component: PlayerContainer
-				}
-			]
+			component: TeamContainer
+		},
+		{
+			path: '/teams/:team/:player',
+			component: PlayerContainer
 		}
 	]
 };
