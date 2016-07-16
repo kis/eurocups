@@ -1,31 +1,31 @@
 export function requestTeams(teams) {
-  return {
-    type: 'REQUEST_TEAMS',
-    teams: teams
-  }
+	return {
+		type: 'REQUEST_TEAMS',
+		teams: teams
+	}
 }
 
 export function receiveTeams(teams) {
-  return {
-    type: 'RECEIVE_TEAMS',
-    teams: teams
-  }
+	return {
+		type: 'RECEIVE_TEAMS',
+		teams: teams
+	}
 }
 
 export function filterTeamsByGroup(group) {
-  return {
-    type: 'FILTER_TEAMS',
-    group: group
-  }
+	return {
+		type: 'FILTER_TEAMS',
+		group: group
+	}
 }
 
 export function fetchTeams() {
 	return function (dispatch) {
 		dispatch(requestTeams(null))
 		return fetch('/assets/football/Euro2016/teams.json')
-      .then(response => response.json())
-      .then(response =>
-        dispatch(receiveTeams(response.sheets.Teams))
+			.then(response => response.json())
+			.then(response =>
+      	dispatch(receiveTeams(response.sheets.Teams))
       )
 	}
 }

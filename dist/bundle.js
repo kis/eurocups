@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8b32d91ff04ea53fa8f1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0350e2d6967f2fd16840"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28144,9 +28144,10 @@
 			}
 		}], [{
 			key: 'contextTypes',
-			value: function contextTypes() {
-				router: _react2['default'].PropTypes.object;
-			}
+			value: {
+				router: _react2['default'].PropTypes.object
+			},
+			enumerable: true
 		}]);
 
 		return AppContainer;
@@ -28448,15 +28449,17 @@
 
 	var _classCallCheck = __webpack_require__(288)['default'];
 
-	var _interopRequireWildcard = __webpack_require__(290)['default'];
-
 	var _interopRequireDefault = __webpack_require__(2)['default'];
+
+	var _interopRequireWildcard = __webpack_require__(290)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 		value: true
 	});
 
 	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
 
 	var _redux = __webpack_require__(168);
 
@@ -28496,13 +28499,13 @@
 			value: function render() {
 				var teams = this.props.teams;
 
-				return React.createElement(
+				return _react2['default'].createElement(
 					'div',
 					null,
-					React.createElement(_componentsOptionsOptions2['default'], this.props),
-					teams.showTeams || teams.showStandings ? React.createElement(_componentsGroupsGroups2['default'], this.props) : null,
-					teams.showTeams ? React.createElement(_componentsTeamsTeams2['default'], this.props) : null,
-					teams.showStandings ? React.createElement(_componentsStandingsStandings2['default'], this.props) : null
+					_react2['default'].createElement(_componentsOptionsOptions2['default'], this.props),
+					teams.showTeams || teams.showStandings ? _react2['default'].createElement(_componentsGroupsGroups2['default'], this.props) : null,
+					teams.showTeams ? _react2['default'].createElement(_componentsTeamsTeams2['default'], this.props) : null,
+					teams.showStandings ? _react2['default'].createElement(_componentsStandingsStandings2['default'], this.props) : null
 				);
 			}
 		}]);
@@ -28696,9 +28699,10 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: function propTypes() {
-				teams: _react.PropTypes.object.isRequired;
-			}
+			value: {
+				teams: _react.PropTypes.object.isRequired
+			},
+			enumerable: true
 		}]);
 
 		return Options;
@@ -28774,9 +28778,10 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: function propTypes() {
-				teams: _react.PropTypes.object.isRequired;
-			}
+			value: {
+				teams: _react.PropTypes.object.isRequired
+			},
+			enumerable: true
 		}]);
 
 		return Groups;
@@ -29028,6 +29033,8 @@
 			value: function renderGroup(group, data) {
 				var _this = this;
 
+				var headers = _Object$keys(data[0].stats);
+
 				return _react2['default'].createElement(
 					'div',
 					null,
@@ -29039,7 +29046,8 @@
 							null,
 							'Team'
 						),
-						_Object$keys(data[0].stats).map(function (key, i) {
+						headers.map(function (key, i) {
+							key = key.replace('-', ' ');
 							return _react2['default'].createElement(
 								'div',
 								{ key: i },
@@ -29103,14 +29111,16 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: function propTypes() {
-				teams: _react.PropTypes.object.isRequired;
-			}
+			value: {
+				teams: _react.PropTypes.object.isRequired
+			},
+			enumerable: true
 		}, {
 			key: 'contextTypes',
-			value: function contextTypes() {
-				router: _react2['default'].PropTypes.object;
-			}
+			value: {
+				router: _react2['default'].PropTypes.object
+			},
+			enumerable: true
 		}]);
 
 		return Standings;
@@ -29241,35 +29251,35 @@
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
-	  value: true
+		value: true
 	});
 	exports.requestTeam = requestTeam;
 	exports.receiveTeam = receiveTeam;
 	exports.fetchTeam = fetchTeam;
 
 	function requestTeam(team) {
-	  return {
-	    type: 'REQUEST_TEAM',
-	    team: team
-	  };
+		return {
+			type: 'REQUEST_TEAM',
+			team: team
+		};
 	}
 
 	function receiveTeam(team) {
-	  return {
-	    type: 'RECEIVE_TEAM',
-	    team: team
-	  };
+		return {
+			type: 'RECEIVE_TEAM',
+			team: team
+		};
 	}
 
 	function fetchTeam(team) {
-	  return function (dispatch) {
-	    dispatch(requestTeam(null));
-	    return fetch('/assets/football/Euro2016/' + team + '-players.json').then(function (response) {
-	      return response.json();
-	    }).then(function (response) {
-	      return dispatch(receiveTeam(response.sheets.Players));
-	    });
-	  };
+		return function (dispatch) {
+			dispatch(requestTeam(null));
+			return fetch('/assets/football/Euro2016/' + team + '-players.json').then(function (response) {
+				return response.json();
+			}).then(function (response) {
+				return dispatch(receiveTeam(response.sheets.Players));
+			});
+		};
 	}
 
 /***/ },
@@ -29387,9 +29397,10 @@
 			}
 		}], [{
 			key: 'propTypes',
-			value: function propTypes() {
-				team: _react.PropTypes.object.isRequired;
-			}
+			value: {
+				team: _react.PropTypes.object.isRequired
+			},
+			enumerable: true
 		}]);
 
 		return Team;
