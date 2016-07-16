@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0350e2d6967f2fd16840"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5f31ceb6d08bffeee434"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -29047,7 +29047,7 @@
 							'Team'
 						),
 						headers.map(function (key, i) {
-							key = key.replace('-', ' ');
+							key = key.replace('_', ' ');
 							return _react2['default'].createElement(
 								'div',
 								{ key: i },

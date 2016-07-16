@@ -1,0 +1,78 @@
+.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+body {
+	background-color: rgba(64,146,0,0.2);
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+
+	.player {
+		margin: 10px;
+		padding: 10px;
+		width: 300px;
+		height: auto;
+		color: rgba(0,53,5,0.9);
+		font-weight: bold;
+
+		&:hover {
+			opacity: 1 !important;
+			color: rgba(0,53,5,1);
+			cursor: pointer;
+		}
+
+		.player-group {
+			margin: 15px 5px;
+			font-size: 24px;
+			text-align: center;
+		}
+
+		.player-title {
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.player-coach {
+			margin: 15px 5px;
+			color: black;
+
+			div:first-child {
+				display: inline-block;
+				float: left;
+			}
+			div:last-child {
+				display: inline-block;
+				float: right;
+			}
+		}
+
+		.player-bio {
+			margin: 15px 5px;
+			color: black;
+			font-weight: normal;
+		}
+
+		.player-rank {
+			margin: 15px 5px;
+
+			div:first-child {
+				display: inline-block;
+				float: left;
+			}
+			div:last-child {
+				display: inline-block;
+				float: right;
+			}
+		}
+	}
+}
