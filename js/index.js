@@ -7,13 +7,26 @@ import { Router, browserHistory } from 'react-router';
 import AppContainer from './containers/AppContainer';
 import TeamsContainer from './containers/TeamsContainer';
 import TeamContainer from './containers/TeamContainer';
+import PlayerContainer from './containers/PlayerContainer';
 
 const routes = {
 	path: '/',
 	component: AppContainer,
 	childRoutes: [
-		{ path: '/teams', component: TeamsContainer },
-		{ path: '/teams/:team', component: TeamContainer }
+		{
+			path: '/teams',
+			component: TeamsContainer
+		},
+		{
+			path: '/teams/:team',
+			component: TeamContainer ,
+			childRoutes: [
+				{
+					path: '/teams/:team/:player',
+					component: PlayerContainer
+				}
+			]
+		}
 	]
 };
 

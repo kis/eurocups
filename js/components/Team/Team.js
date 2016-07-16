@@ -15,6 +15,11 @@ class Team extends Component {
 		team: PropTypes.object.isRequired
 	}
 
+	openPlayerView(team, player) {
+		// team = team.replace(/\s/g, '-');
+		this.context.router.push('/teams/' + team.toLowerCase() + '/' + player.toLowerCase());
+	}
+
 	togglePlayerInfo(i) {
 		this.setState({
 			activePlayer: this.state.activePlayer != i ? i : null
@@ -44,6 +49,7 @@ class Team extends Component {
 							<div>{result.caps}</div>
 						</div>
 						<div className="player-bio">{result.bio}</div>
+						<a href className="player-profile" onClick={this.openPlayerView.bind(this, 'asd', 'sda')}>Open Player Profile</a>
 					</div>
 				</div>
 			}) : <div>Loading team...</div>}

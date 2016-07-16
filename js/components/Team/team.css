@@ -65,7 +65,7 @@ body {
 				}
 			}
 
-			.player-bio {
+			.player-bio, .player-profile {
 				margin: 15px 5px;
 				color: black;
 				font-weight: normal;

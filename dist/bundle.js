@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5f31ceb6d08bffeee434"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4e198c38d2e88d86e593"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28845,11 +28845,6 @@
 				actions.fetchTeams();
 			}
 		}, {
-			key: 'shouldComponentUpdate',
-			value: function shouldComponentUpdate(nextProps, nextState) {
-				return true;
-			}
-		}, {
 			key: 'openTeamView',
 			value: function openTeamView(team) {
 				team = team.replace(/\s/g, '-');
@@ -29298,8 +29293,6 @@
 
 	var _interopRequireDefault = __webpack_require__(2)['default'];
 
-	var _interopRequireWildcard = __webpack_require__(290)['default'];
-
 	Object.defineProperty(exports, '__esModule', {
 		value: true
 	});
@@ -29307,10 +29300,6 @@
 	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _utilUtil = __webpack_require__(297);
-
-	var util = _interopRequireWildcard(_utilUtil);
 
 	__webpack_require__(307);
 
@@ -29321,71 +29310,101 @@
 			_classCallCheck(this, Team);
 
 			_get(Object.getPrototypeOf(Team.prototype), 'constructor', this).call(this, props);
+
+			this.state = {
+				activePlayer: null
+			};
 		}
 
 		_createClass(Team, [{
+			key: 'togglePlayerInfo',
+			value: function togglePlayerInfo(i) {
+				this.setState({
+					activePlayer: this.state.activePlayer != i ? i : null
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+				var _this = this;
+
 				return _react2['default'].createElement(
 					'div',
 					{ className: 'team-container' },
 					this.props.team.team ? this.props.team.team.map(function (result, i) {
 						return _react2['default'].createElement(
 							'div',
-							{ className: 'player', style: util.getTeamColor(), key: i },
+							{ className: 'player', key: i, onClick: _this.togglePlayerInfo.bind(_this, i) },
 							_react2['default'].createElement(
 								'div',
-								{ className: 'player-group' },
-								result.name
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-group' },
-								result['date of birth']
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-title' },
-								result.club
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-title' },
-								result.position
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-title' },
-								result.number
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-title' },
-								result['goals for country']
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-title' },
-								result.caps
-							),
-							_react2['default'].createElement(
-								'div',
-								{ className: 'player-coach clearfix' },
+								{ className: 'player-header' },
 								_react2['default'].createElement(
 									'div',
-									null,
-									'League'
+									{ className: 'player-group' },
+									result.name
 								),
 								_react2['default'].createElement(
 									'div',
-									null,
+									{ className: 'player-group' },
+									result['date of birth']
+								),
+								_react2['default'].createElement(
+									'div',
+									{ className: 'player-title' },
+									result.club
+								),
+								_react2['default'].createElement(
+									'div',
+									{ className: 'player-title' },
+									result.position
+								),
+								_react2['default'].createElement(
+									'div',
+									{ className: 'player-league' },
 									result.league
 								)
 							),
 							_react2['default'].createElement(
 								'div',
-								{ className: 'player-bio' },
-								result.bio
+								{ className: _this.state.activePlayer === i ? "player-info active" : "player-info" },
+								result.number ? _react2['default'].createElement(
+									'div',
+									{ className: 'player-number' },
+									result.number
+								) : null,
+								_react2['default'].createElement(
+									'div',
+									{ className: 'player-goals clearfix' },
+									_react2['default'].createElement(
+										'div',
+										null,
+										'Goals for country'
+									),
+									_react2['default'].createElement(
+										'div',
+										null,
+										result['goals for country']
+									)
+								),
+								_react2['default'].createElement(
+									'div',
+									{ className: 'player-caps clearfix' },
+									_react2['default'].createElement(
+										'div',
+										null,
+										'Caps'
+									),
+									_react2['default'].createElement(
+										'div',
+										null,
+										result.caps
+									)
+								),
+								_react2['default'].createElement(
+									'div',
+									{ className: 'player-bio' },
+									result.bio
+								)
 							)
 						);
 					}) : _react2['default'].createElement(

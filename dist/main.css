@@ -207,41 +207,39 @@ body {
       flex-wrap: wrap;
   font-family: "Liberation Mono"; }
   .team-container .player {
-    margin: 10px;
-    padding: 10px;
-    width: 300px;
+    margin: 5px;
+    width: 80%;
     height: auto;
+    background: #5f8177;
     color: rgba(0, 53, 5, 0.9);
     font-weight: bold; }
     .team-container .player:hover {
       opacity: 1 !important;
       color: #003505;
       cursor: pointer; }
-    .team-container .player .player-group {
-      margin: 15px 5px;
-      font-size: 24px;
-      text-align: center; }
-    .team-container .player .player-title {
-      text-align: center;
-      cursor: pointer; }
-    .team-container .player .player-coach {
-      margin: 15px 5px;
-      color: black; }
-      .team-container .player .player-coach div:first-child {
-        display: inline-block;
-        float: left; }
-      .team-container .player .player-coach div:last-child {
-        display: inline-block;
-        float: right; }
-    .team-container .player .player-bio {
-      margin: 15px 5px;
-      color: black;
-      font-weight: normal; }
-    .team-container .player .player-rank {
-      margin: 15px 5px; }
-      .team-container .player .player-rank div:first-child {
-        display: inline-block;
-        float: left; }
-      .team-container .player .player-rank div:last-child {
-        display: inline-block;
-        float: right; }
+    .team-container .player .player-header {
+      background: #5f8177;
+      padding: 7px; }
+      .team-container .player .player-header div {
+        margin: 15px 5px;
+        min-width: 180px;
+        display: inline-block; }
+    .team-container .player .player-info {
+      display: none;
+      background: #9cb8b0;
+      padding: 7px; }
+      .team-container .player .player-info.active {
+        display: block; }
+      .team-container .player .player-info .player-goals, .team-container .player .player-info .player-caps {
+        margin: 15px 5px;
+        color: black; }
+        .team-container .player .player-info .player-goals div:first-child, .team-container .player .player-info .player-caps div:first-child {
+          width: 200px;
+          display: inline-block;
+          float: left; }
+        .team-container .player .player-info .player-goals div:last-child, .team-container .player .player-info .player-caps div:last-child {
+          display: inline-block; }
+      .team-container .player .player-info .player-bio {
+        margin: 15px 5px;
+        color: black;
+        font-weight: normal; }
