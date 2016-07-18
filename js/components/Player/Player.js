@@ -14,17 +14,19 @@ class Player extends Component {
 	}
 
 	static contextTypes = {
-  	router: React.PropTypes.object
-  }
+  		router: React.PropTypes.object
+  	}
 
 	render() {
 		let { team } = this.props;
 
 		let playerName = this.props.routeParams.player;
-		playerName = playerName.replace('-', ' ');
+		playerName = playerName.replace(/[-]/g, ' ');
 
 		let findPlayer = (player) => {
-			return player.name.toLowerCase() == playerName;
+			if (player.name && player.name.toLowerCase()) {
+				return player.name.toLowerCase().replace(/[-]/g, ' ') == playerName;
+			}
 		};
 
 		let player = team.team.find(findPlayer);

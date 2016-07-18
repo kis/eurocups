@@ -10,17 +10,17 @@ class Teams extends Component {
 	}
 
 	static propTypes = {
-    teams: PropTypes.object.isRequired
-  }
+    	teams: PropTypes.object.isRequired
+  	}
 
 	static contextTypes = {
-  	router: React.PropTypes.object
-  }
+  		router: React.PropTypes.object
+  	}
 
-  componentWillMount() {
-  	const { actions } = this.props;
-  	actions.fetchTeams();
-  }
+  	componentWillMount() {
+  		const { actions } = this.props;
+  		actions.fetchTeams();
+  	}
 
 	openTeamView(team) {
 		team = team.replace(/\s/g, '-');

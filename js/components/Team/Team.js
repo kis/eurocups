@@ -16,8 +16,8 @@ class Team extends Component {
 	}
 
 	static contextTypes = {
-  	router: React.PropTypes.object
-  }
+  		router: React.PropTypes.object
+  	}
 
 	openPlayerView(player) {
 		player = player.replace(/\s/g, '-');
@@ -59,7 +59,7 @@ class Team extends Component {
 				</div>
 			}) : <div>Loading team...</div>}
 			</div>
-			);
+		);
 	}
 }
 
