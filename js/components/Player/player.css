@@ -42,9 +42,8 @@ body {
 			cursor: pointer;
 		}
 
-		.player-coach {
+		.player-coach, .player-rank, .player-goals, .player-caps {
 			margin: 15px 5px;
-			color: black;
 
 			div:first-child {
 				display: inline-block;
@@ -54,25 +53,16 @@ body {
 				display: inline-block;
 				float: right;
 			}
+		}
+
+		.player-coach {
+			color: black;
 		}
 
 		.player-bio {
 			margin: 15px 5px;
 			color: black;
 			font-weight: normal;
-		}
-
-		.player-rank {
-			margin: 15px 5px;
-
-			div:first-child {
-				display: inline-block;
-				float: left;
-			}
-			div:last-child {
-				display: inline-block;
-				float: right;
-			}
 		}
 	}
 }

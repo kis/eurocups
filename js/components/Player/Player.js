@@ -39,8 +39,14 @@ class Player extends Component {
 					<div className="player-title">{player.club}</div>
 					<div className="player-title">{player.position}</div>
 					<div className="player-title">{player.number}</div>
-					<div className="player-title">{player['goals for country']}</div>
-					<div className="player-title">{player.caps}</div>
+					<div className="player-goals clearfix">
+						<div>Goals for country</div>
+						<div>{player['goals for country']}</div>
+					</div>
+					<div className="player-caps clearfix">
+						<div>Caps</div>
+						<div>{player.caps}</div>
+					</div>
 					<div className="player-coach clearfix">
 						<div>League</div>
 						<div>{player.league}</div>
