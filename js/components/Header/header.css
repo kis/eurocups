@@ -1,0 +1,30 @@
+body {
+	margin: 0px;
+}
+
+.header { 
+	position: relative;
+	top: 0px;
+	left: 0px; 
+	background: #8dbdad;
+
+	.breadcrumbs {
+		height: 70px;
+		padding: 10px 15px;
+		color: green;
+		background: red;
+
+		.bc-item {
+			margin: 10px;
+			padding: 10px;
+			display: inline-block;
+			background: aquamarine;
+			cursor: pointer;
+
+			&:hover {
+				background: #2affb7;
+			}
+		}
+	}
+}
+

@@ -1,5 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
+import * as actions from '../actions/teams';
+
+import Header from '../components/Header/Header';
 
 class AppContainer extends Component {
 
@@ -14,6 +19,7 @@ class AppContainer extends Component {
 	render() {
 		return (
 			<div>
+				<Header {...this.props} />
 				{this.props.children}
 			</div>
 		);
@@ -22,4 +28,6 @@ class AppContainer extends Component {
 
 const mapStateToProps = (state) => ({});
 
-export default connect(mapStateToProps)(AppContainer);
+const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
