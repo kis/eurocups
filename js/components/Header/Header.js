@@ -11,20 +11,33 @@ class Header extends Component {
   		router: React.PropTypes.object
   	}
 
-  	handleClick(i) {
-  		console.log(this.bc[i])
+  	openBC(i) {
+  		let route = '';
+
+  		this.bc.forEach((currBC, j) => {
+  			if (i >= j) {
+  				route += currBC.route;
+  			}
+  		});
+
+  		this.context.router.push(route);
   	}
 
 	render() {
-		this.bc = ['TEAMS'];
+		this.bc = [{
+			bc: 'TEAMS',
+			route: '/teams'
+		}];
 
 		let paramsArr = Object.keys(this.props.params);
 
 		if (paramsArr && paramsArr.length) {
-			paramsArr.map((el, i) => {
-				console.log(el, this.props.params[el])
-				let nextBC = this.props.params[el].toUpperCase();
-				this.bc.push(nextBC);
+			paramsArr.map(el => {
+				let nextBC = this.props.params[el];
+				this.bc.push({
+					bc: nextBC.toUpperCase(),
+					route: '/' + nextBC
+				});
 			});
 		}
 
@@ -32,7 +45,7 @@ class Header extends Component {
 			<div className="header">
 				<div className="breadcrumbs">
 					{ this.bc.map((el, i) => {
-						return <span className="bc-item" onClick={this.handleClick.bind(this, i)} key={i}>{el}</span>
+						return <span className="bc-item" onClick={this.openBC.bind(this, i)} key={i}>{el.bc}</span>
 					})}
 				</div>
 			</div>
