@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import * as util from '../../util/util';
+
 import './team.css';
 
 class Team extends Component {
@@ -9,6 +11,8 @@ class Team extends Component {
 		this.state = {
 			activePlayer: null
 		};
+
+		this.style = util.getTeamColor();
 	}
 
 	static propTypes = {
@@ -35,7 +39,7 @@ class Team extends Component {
 		return (
 			<div className="team-container">
 			{this.props.team.team ? this.props.team.team.map((result, i) => {
-				return <div className="player" key={i} onClick={this.togglePlayerInfo.bind(this, i)}>
+				return <div className="player" style={this.style} key={i} onClick={this.togglePlayerInfo.bind(this, i)}>
 					<div>
 						<div className="player-header">
 							<div className="player-group">{result.name}</div>
@@ -44,7 +48,7 @@ class Team extends Component {
 							<div className="player-title">{result.position}</div>
 							<div className="player-league">{result.league}</div>
 						</div>
-						<div className="player-profile-link" onClick={this.openPlayerView.bind(this, result.name)}> > </div>
+						<div className="player-profile-link" onClick={this.openPlayerView.bind(this, result.name)}>Profile</div>
 					</div>
 					<div className={this.state.activePlayer === i ? "player-info active" : "player-info"}>
 						{result.number ? <div className="player-number">{result.number}</div> : null}

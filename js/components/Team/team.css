@@ -23,20 +23,26 @@
 		}
 
 		.player-header {
-			background: rgb(95,129,119);
 			padding: 7px;
+			display: inline-block;
 
 			div {
-				margin: 15px 5px;
+				margin: 8px 5px;
 				min-width: 180px;
 				display: inline-block;
 			}
 		}
 
 		.player-profile-link {
-			margin: 15px 5px;
-			color: #160848;
+			margin: 8px 5px;
+			color: #e6f355;
 			font-weight: bold;
+			float: right;
+    	padding: 7px;
+
+			&:hover {
+				background: rgba(168, 145, 239, 0.37);
+			}
 		}
 
 		.player-info {
