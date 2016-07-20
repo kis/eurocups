@@ -22,10 +22,10 @@ export default function teams(state = initTeams, action) {
 		return {...state, standings: action.standings};
 
 	case 'TOGGLE_TEAMS':
-		return {...state, showTeams: !state.showTeams};
+		return {...state, showTeams: true, showStandings: false};
 
 	case 'TOGGLE_STANDINGS':
-		return {...state, showStandings: !state.showStandings};
+		return {...state, showTeams: false, showStandings: true};
 
 	default:
 		return {...state};

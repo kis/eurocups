@@ -3,13 +3,14 @@
 .header {
 	position: relative;
 	top: 0px;
-	left: 0px; 
-	background: #8dbdad;
+	left: 0px;
+	background: #4e6d54;
 	@include noselect();
 
 	.breadcrumbs {
+		position: relative;
+		left: 20px;
 		color: green;
-		background: #4e6d54;
 
 		.bc-item {
 			margin: 10px;
@@ -24,4 +25,3 @@
 		}
 	}
 }
-

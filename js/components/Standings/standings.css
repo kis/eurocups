@@ -30,7 +30,7 @@
 			.group-table-header {
 				font-weight: bold;
 				background: #5a8ca0;
-				padding: 5px 50px;
+				padding: 0px 50px;
 			}
 
 			.group-table-line {
@@ -50,7 +50,7 @@
 				justify-content: space-around;
 
 				div {
-					padding: 10px 10px;
+					padding: 5px 5px;
 
 					&:first-child {
 						width: 180px;

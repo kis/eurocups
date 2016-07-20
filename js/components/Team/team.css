@@ -9,7 +9,7 @@
 	@include noselect();
 
 	.player {
-		margin: 5px;
+		margin: 2px;
 		width: 80%;
 		height: auto;
 		background: rgb(95,129,119);
@@ -25,6 +25,7 @@
 		.player-header {
 			padding: 7px;
 			display: inline-block;
+			width: 90%;
 
 			div {
 				margin: 8px 5px;
@@ -39,6 +40,7 @@
 			font-weight: bold;
 			float: right;
     	padding: 7px;
+			max-width: 10%;
 
 			&:hover {
 				background: rgba(168, 145, 239, 0.37);
