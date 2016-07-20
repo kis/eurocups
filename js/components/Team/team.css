@@ -1,14 +1,4 @@
-.clearfix:after {
-	display: block;
-	visibility: hidden;
-	content: "";
-	clear: both;
-	height: 0;
-}
-
-body {
-	background-color: rgba(64,146,0,0.2);
-}
+@import '../../index';
 
 .team-container {
 	display: flex;
@@ -16,6 +6,7 @@ body {
 	justify-content: center;
 	flex-wrap: wrap;
 	font-family: "Liberation Mono";
+	@include noselect();
 
 	.player {
 		margin: 5px;

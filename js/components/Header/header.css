@@ -1,16 +1,11 @@
 @import "../../index";
 
-body {
-	margin: 0px;
-}
-
 .header {
-	@include noselect();
-
 	position: relative;
 	top: 0px;
 	left: 0px; 
 	background: #8dbdad;
+	@include noselect();
 
 	.breadcrumbs {
 		color: green;

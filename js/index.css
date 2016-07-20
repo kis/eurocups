@@ -1,3 +1,16 @@
 @mixin noselect() {
     user-select: none;
 }
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}
+
+.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
