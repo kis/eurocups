@@ -3,6 +3,7 @@ var path = require('path');
 
 var autoprefixer = require('autoprefixer');
 var precss       = require('precss');
+var mixins       = require('postcss-mixins');
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -41,6 +42,6 @@ module.exports = {
     new ExtractTextPlugin("[name].css", { allChunks: true })
   ],
   postcss: function () {
-    return [autoprefixer, precss];
+    return [autoprefixer, precss, mixins];
   }
 };

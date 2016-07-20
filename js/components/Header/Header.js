@@ -42,7 +42,7 @@ class Header extends Component {
 		}
 
 		return (
-			<div className="header">
+			<div className="header noselect">
 				<div className="breadcrumbs">
 					{ this.bc.map((el, i) => {
 						return <span className="bc-item" onClick={this.openBC.bind(this, i)} key={i}>{el.bc}</span>

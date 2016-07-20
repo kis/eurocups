@@ -1,8 +1,12 @@
+@import "../../index";
+
 body {
 	margin: 0px;
 }
 
-.header { 
+.header {
+	@include noselect();
+
 	position: relative;
 	top: 0px;
 	left: 0px; 
