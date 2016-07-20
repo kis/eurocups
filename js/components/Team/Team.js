@@ -36,12 +36,15 @@ class Team extends Component {
 			<div className="team-container">
 			{this.props.team.team ? this.props.team.team.map((result, i) => {
 				return <div className="player" key={i} onClick={this.togglePlayerInfo.bind(this, i)}>
-					<div className="player-header">
-						<div className="player-group">{result.name}</div>
-						<div className="player-group">{result['date of birth']}</div>
-						<div className="player-title">{result.club}</div>
-						<div className="player-title">{result.position}</div>
-						<div className="player-league">{result.league}</div>
+					<div>
+						<div className="player-header">
+							<div className="player-group">{result.name}</div>
+							<div className="player-group">{result['date of birth']}</div>
+							<div className="player-title">{result.club}</div>
+							<div className="player-title">{result.position}</div>
+							<div className="player-league">{result.league}</div>
+						</div>
+						<div className="player-profile-link" onClick={this.openPlayerView.bind(this, result.name)}> > </div>
 					</div>
 					<div className={this.state.activePlayer === i ? "player-info active" : "player-info"}>
 						{result.number ? <div className="player-number">{result.number}</div> : null}
@@ -54,7 +57,6 @@ class Team extends Component {
 							<div>{result.caps}</div>
 						</div>
 						<div className="player-bio">{result.bio}</div>
-						<div className="player-profile" onClick={this.openPlayerView.bind(this, result.name)}>Open Player Profile</div>
 					</div>
 				</div>
 			}) : <div>Loading team...</div>}
