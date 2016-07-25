@@ -1,10 +1,8 @@
 @import '../../index';
 
-.container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
+.player-container {
+	position: relative;
+	display: inline-block;
 	font-family: "Liberation Mono";
 	@include noselect();
 

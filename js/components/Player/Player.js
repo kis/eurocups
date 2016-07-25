@@ -32,7 +32,7 @@ class Player extends Component {
 		let player = team.team.find(findPlayer);
 
 		return (
-			<div className="container">
+			<div className="player-container">
 				<div className="player" style={util.getTeamColor()}>
 					<div className="player-group">{player.name}</div>
 					<div className="player-group">{player['date of birth']}</div>

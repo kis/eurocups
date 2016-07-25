@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/teams';
 
 import Player from '../components/Player/Player';
+import CommentsForm from '../components/CommentsForm/CommentsForm';
 
 class PlayerContainer extends Component {
 	render() {
@@ -12,6 +13,7 @@ class PlayerContainer extends Component {
 		return (
 			<div>
 				<Player {...this.props} />
+				<CommentsForm {...this.props} />
 			</div>
 		);
 	}
