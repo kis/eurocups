@@ -5,6 +5,7 @@ import * as actions from '../actions/teams';
 
 import Player from '../components/Player/Player';
 import CommentsForm from '../components/CommentsForm/CommentsForm';
+import Comments from '../components/Comments/Comments';
 
 class PlayerContainer extends Component {
 	render() {
@@ -14,13 +15,15 @@ class PlayerContainer extends Component {
 			<div>
 				<Player {...this.props} />
 				<CommentsForm {...this.props} />
+				<Comments {...this.props} />
 			</div>
 		);
 	}
 }
 
 const mapStateToProps = (state) => ({
-	team: state.team
+	team: state.team,
+	comments: state.comments
 });
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});

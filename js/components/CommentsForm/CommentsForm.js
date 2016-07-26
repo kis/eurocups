@@ -1,9 +1,27 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 
-export const fields = [ 'firstName', 'lastName' ];
+import * as actions from '../../actions/comments';
 
-import './comments.css';
+export const fields = [ 'name', 'comment' ];
+
+import './comments-form.css';
+
+
+const submit = (values, dispatch) => {
+	return new Promise((resolve, reject) => {
+      	/*if (![ 'john', 'paul', 'george', 'ringo' ].includes(values.username)) {
+        	reject({ username: 'User does not exist', _error: 'Login failed!' })
+      	} else if (values.password !== 'redux-form') {
+        	reject({ password: 'Wrong password', _error: 'Login failed!' })
+      	} else {*/
+      		console.log(values)
+        	actions.saveComment(values);
+        	resolve();
+      	// }
+  	});
+}
+
 
 class CommentsForm extends Component {
 	constructor(props) {
@@ -12,24 +30,24 @@ class CommentsForm extends Component {
 
 	render() {
 		const {
-			fields: { firstName, lastName },
+			fields: { name, comment },
 			handleSubmit,
 			resetForm,
 			submitting
 		} = this.props;
 
 		return (
-		    <form className="comments-form" onSubmit={handleSubmit}>
+		    <form className="comments-form" onSubmit={handleSubmit(submit)}>
 		    	<div>
-		        	<label>First Name</label>
+		        	<label>Name</label>
 		        	<div>
-		          		<input type="text" placeholder="First Name" {...firstName}/>
+		          		<input type="text" placeholder="Name" {...name}/>
 		        	</div>
 		      	</div>
 		      	<div>
-		        	<label>Last Name</label>
+		        	<label>Comment</label>
 		        	<div>
-		          		<input type="text" placeholder="Last Name" {...lastName}/>
+		          		<input type="text" placeholder="Comment" {...comment}/>
 		        	</div>
 		     	</div>
 		      	<div>

@@ -1,14 +1,14 @@
 export function requestTeam(team) {
 	return {
 		type: 'REQUEST_TEAM',
-		team: team
+		team
 	}
 }
 
 export function receiveTeam(team) {
 	return {
 		type: 'RECEIVE_TEAM',
-		team: team
+		team
 	}
 }
 

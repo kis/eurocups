@@ -1,21 +1,21 @@
 export function requestTeams(teams) {
 	return {
 		type: 'REQUEST_TEAMS',
-		teams: teams
+		teams
 	}
 }
 
 export function receiveTeams(teams) {
 	return {
 		type: 'RECEIVE_TEAMS',
-		teams: teams
+		teams
 	}
 }
 
 export function filterTeamsByGroup(group) {
 	return {
 		type: 'FILTER_TEAMS',
-		group: group
+		group
 	}
 }
 
@@ -45,7 +45,7 @@ export function toggleStandings() {
 export function receiveStandings(standings) {
   return {
     type: 'RECEIVE_STANDINGS',
-    standings: standings
+    standings
   }
 }
 
