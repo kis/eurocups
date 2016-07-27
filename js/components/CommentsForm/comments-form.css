@@ -8,11 +8,12 @@
 
 		input {
 			height: 35px;
-   			width: 270px;
+   			width: 260px;
    			outline: none;
    			border: 0px;
    			color: #00480d;
    			background: beige;
+   			padding-left: 10px;
 		}
 	}
 
