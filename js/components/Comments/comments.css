@@ -1,0 +1,14 @@
+.comments-container {
+
+	.comment {
+		margin: 15px;
+		
+		div {
+			margin-bottom: 10px;
+		}
+
+		div:first-child {
+			font-weight: bold;
+		}
+	}
+}

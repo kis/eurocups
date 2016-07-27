@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions/comments';
+import * as actions from '../../actions/comments';
 
-import Player from '../components/Player/Player';
-import CommentsForm from '../components/CommentsForm/CommentsForm';
-import Comments from '../components/Comments/Comments';
+import Player from '../../components/Player/Player';
+import CommentsForm from '../../components/CommentsForm/CommentsForm';
+import Comments from '../../components/Comments/Comments';
+
+import './player-container.css';
 
 class PlayerContainer extends Component {
 	render() {
 		const { team } = this.props;
 
 		return (
-			<div>
+			<div className="player-outer">
 				<Player {...this.props} />
-				<CommentsForm {...this.props} />
-				<Comments {...this.props} />
+				<div className="comments-cilinder">
+					<CommentsForm {...this.props} />
+					<Comments {...this.props} />
+				</div>
 			</div>
 		);
 	}

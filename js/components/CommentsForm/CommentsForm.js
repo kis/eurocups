@@ -27,6 +27,7 @@ class CommentsForm extends Component {
 	      	} else {*/
 	      		let { actions } = this.props;
 	        	actions.saveComment(values);
+	        	this.props.resetForm();
 	        	resolve();
 	      	// }
 	  	});
@@ -42,19 +43,19 @@ class CommentsForm extends Component {
 
 		return (
 		    <form className="comments-form" onSubmit={handleSubmit(this.submit)}>
-		    	<div>
+		    	<div className="form-input">
 		        	<label>Name</label>
 		        	<div>
 		          		<input type="text" placeholder="Name" {...name}/>
 		        	</div>
 		      	</div>
-		      	<div>
+		      	<div className="form-input">
 		        	<label>Comment</label>
 		        	<div>
 		          		<input type="text" placeholder="Comment" {...comment}/>
 		        	</div>
 		     	</div>
-		      	<div>
+		      	<div className="form-btn">
 		        	<button type="submit" disabled={submitting}>
 		          		{submitting ? <i/> : <i/>} Submit
 		        	</button>

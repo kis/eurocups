@@ -1,4 +1,22 @@
 .comments-form {
 	position: relative;
 	display: inline-block;
+
+	.form-input {
+		margin: 15px;
+
+		input {
+			height: 35px;
+   			width: 270px;
+		}
+	}
+
+	.form-btn {
+		margin: 15px;
+
+		button {
+			margin-right: 15px;
+			height: 45px;
+		}
+	}
 }

@@ -1,0 +1,16 @@
+@import '../../index';
+
+.player-outer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	.comments-cilinder {
+		position: relative;
+		margin: 10px;
+	}
+
+}

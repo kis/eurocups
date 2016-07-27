@@ -7,7 +7,7 @@ import { Router, browserHistory } from 'react-router';
 import AppContainer from './containers/AppContainer';
 import TeamsContainer from './containers/TeamsContainer';
 import TeamContainer from './containers/TeamContainer';
-import PlayerContainer from './containers/PlayerContainer';
+import PlayerContainer from './containers/PlayerContainer/PlayerContainer';
 
 const routes = {
 	path: '/',
