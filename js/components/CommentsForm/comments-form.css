@@ -10,8 +10,9 @@
 			height: 35px;
    			width: 270px;
    			outline: none;
-   			border: 1px solid #21a021;
+   			border: 0px;
    			color: #00480d;
+   			background: beige;
 		}
 	}
 
