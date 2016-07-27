@@ -1,6 +1,7 @@
 .comments-form {
 	position: relative;
 	display: inline-block;
+	color: #00480d;
 
 	.form-input {
 		margin: 15px;
@@ -8,6 +9,9 @@
 		input {
 			height: 35px;
    			width: 270px;
+   			outline: none;
+   			border: 1px solid #21a021;
+   			color: #00480d;
 		}
 	}
 
@@ -17,6 +21,15 @@
 		button {
 			margin-right: 15px;
 			height: 45px;
+			background: #80bf80;
+			border: 0;
+			outline: none;
+			cursor: pointer;
+			color: #00480d;
+
+			&:hover {
+				background: #46a246;
+			}
 		}
 	}
 }

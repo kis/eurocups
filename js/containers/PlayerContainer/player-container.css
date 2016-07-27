@@ -11,6 +11,7 @@
 	.comments-cilinder {
 		position: relative;
 		margin: 10px;
+		max-width: 300px;
 	}
 
 }

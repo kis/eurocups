@@ -1,7 +1,9 @@
 .comments-container {
+	color: #001b86;
 
 	.comment {
 		margin: 15px;
+		word-wrap: break-word;
 		
 		div {
 			margin-bottom: 10px;

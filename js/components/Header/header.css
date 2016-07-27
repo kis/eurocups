@@ -8,8 +8,6 @@
 	@include noselect();
 
 	.breadcrumbs {
-		position: relative;
-		left: 20px;
 		color: green;
 
 		.bc-item {
