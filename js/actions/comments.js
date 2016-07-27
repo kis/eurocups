@@ -4,9 +4,3 @@ export function saveComment(comment) {
 		comment
 	}
 }
-
-export function getComments() {
-	return {
-		type: 'GET_COMMENTS'
-	}
-}

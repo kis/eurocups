@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions/teams';
+import * as actions from '../actions/comments';
 
 import Player from '../components/Player/Player';
 import CommentsForm from '../components/CommentsForm/CommentsForm';

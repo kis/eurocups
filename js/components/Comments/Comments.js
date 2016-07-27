@@ -8,13 +8,15 @@ class Comments extends Component {
 	}
 
 	render() {
-		console.log(this.props)
 		let { comments } = this.props;
 
 		return (
 		    <div className="comments-container">
-		    	{comments.length ? comments.map((comment, key) => {
-		    		return <div key={key} className="comment">{comment}</div>
+		    	{comments.comments && comments.comments.length ? comments.comments.map((comment, key) => {
+		    		return <div key={key} className="comment">
+		    			<div>{comment.name}</div>
+		    			<div>{comment.comment}</div>
+		    		</div>
 		    	}) : null}
 			</div>
 		);
