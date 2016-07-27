@@ -17,6 +17,10 @@ class Player extends Component {
   		router: React.PropTypes.object
   	}
 
+  	shouldComponentUpdate() {
+  		return false;
+  	}
+
 	render() {
 		let { team } = this.props;
 
