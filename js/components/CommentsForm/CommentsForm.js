@@ -44,16 +44,10 @@ class CommentsForm extends Component {
 		return (
 		    <form className="comments-form" autoComplete="off" onSubmit={handleSubmit(this.submit)}>
 		    	<div className="form-input">
-		        	<label>Name</label>
-		        	<div>
-		          		<input type="text" autoComplete="off" placeholder="Name" {...name}/>
-		        	</div>
+	          		<input type="text" autoComplete="off" placeholder="Name" {...name}/>
 		      	</div>
 		      	<div className="form-input">
-		        	<label>Comment</label>
-		        	<div>
-		          		<input type="text" autoComplete="off" placeholder="Comment" {...comment}/>
-		        	</div>
+	          		<input type="text" autoComplete="off" placeholder="Comment" {...comment}/>
 		     	</div>
 		      	<div className="form-btn">
 		        	<button type="submit" disabled={submitting}>

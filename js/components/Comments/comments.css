@@ -1,11 +1,24 @@
+@keyframes show-comment {
+	from {
+		position: relative;
+		left: 20px;
+	}
+	to {
+		position: relative;
+		left: 0px;
+	}	
+}
+
 .comments-container {
-	color: #001b86;
+	color: #205202;
 
 	.comment {
 		margin: 15px;
 		padding: 10px;
 		word-wrap: break-word;
 		background: #a1d0ae;
+		font-size: 14px;
+		animation: show-comment 1s;
 		
 		div:first-child {
 			font-weight: bold;
