@@ -42,17 +42,17 @@ class CommentsForm extends Component {
 		} = this.props;
 
 		return (
-		    <form className="comments-form" autocomplete="off" onSubmit={handleSubmit(this.submit)}>
+		    <form className="comments-form" autoComplete="off" onSubmit={handleSubmit(this.submit)}>
 		    	<div className="form-input">
 		        	<label>Name</label>
 		        	<div>
-		          		<input type="text" autocomplete="off" placeholder="Name" {...name}/>
+		          		<input type="text" autoComplete="off" placeholder="Name" {...name}/>
 		        	</div>
 		      	</div>
 		      	<div className="form-input">
 		        	<label>Comment</label>
 		        	<div>
-		          		<input type="text" autocomplete="off" placeholder="Comment" {...comment}/>
+		          		<input type="text" autoComplete="off" placeholder="Comment" {...comment}/>
 		        	</div>
 		     	</div>
 		      	<div className="form-btn">
