@@ -15,13 +15,7 @@ export function receiveTeam(team) {
 export function fetchTeam(team) {
 	return function (dispatch) {
 		dispatch(requestTeam(null))
-
-		async function getTeamData() {
-			let data = await teamData(team);
-			dispatch(receiveTeam(data));
-		}
-
-		getTeamData();
+		teamData(team).then(res => dispatch(receiveTeam(res)));
 	}
 }
 

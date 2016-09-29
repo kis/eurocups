@@ -21,13 +21,15 @@ export function filterTeamsByGroup(group) {
 
 export function fetchTeams() {
 	return function (dispatch) {
-		dispatch(requestTeams(null))
-		return fetch('/assets/football/Euro2016/teams.json')
-			.then(response => response.json())
-			.then(response =>
-      	dispatch(receiveTeams(response.sheets.Teams))
-      )
+		dispatch(requestTeams(null));
+    teamsData().then(res => dispatch(receiveTeams(res)));
 	}
+}
+
+async function teamsData() {
+  let teamsData = await fetch('/assets/football/Euro2016/teams.json');
+  let res = await teamsData.json();
+  return res.sheets.Teams;
 }
 
 export function toggleTeams() {
@@ -51,10 +53,12 @@ export function receiveStandings(standings) {
 
 export function fetchStandings() {
   return function (dispatch) {
-    return fetch('/assets/football/uefa-euro-201616.json')
-      .then(response => response.json())
-      .then(response =>
-        dispatch(receiveStandings(response))
-      )
+    standingsData().then(res => dispatch(receiveStandings(res)));
   }
+}
+
+async function standingsData() {
+  let stData = await fetch('/assets/football/uefa-euro-201616.json');
+  let res = await stData.json();
+  return res;
 }
