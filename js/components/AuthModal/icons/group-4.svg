@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="19px" viewBox="0 0 26 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>56B0DA89-6FE0-4BB9-A781-0ED9D9FE190B</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="26" height="19" rx="2.16"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Create-Account" transform="translate(-844.000000, -581.000000)">
+            <g id="group-4" transform="translate(844.000000, 581.000000)">
+                <g id="01CFF938-89F2-4CB9-8AF0-8DB3D9336588">
+                    <g id="Page-1">
+                        <g id="Email-me-These-Bottom">
+                            <g id="Group-4">
+                                <g id="Rectangle-2-Clipped">
+                                    <g id="Rectangle-2"></g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="path-1"></g>
+                <rect id="path-1" stroke="#FFFFFF" stroke-width="2.4" mask="url(#mask-2)" x="0" y="0" width="26" height="19" rx="2.16"></rect>
+                <polyline id="Path-2" stroke="#FFFFFF" stroke-width="1.2" mask="url(#mask-2)" points="3 2 13.5 10 24 2"></polyline>
+                <path d="M8,10 L2,16" id="Line" stroke="#FFFFFF" stroke-width="1.2" mask="url(#mask-2)"></path>
+                <path d="M24,10 L17,16" id="Line-Copy" stroke="#FFFFFF" stroke-width="1.2" mask="url(#mask-2)" transform="translate(20.500000, 13.000000) scale(1, -1) translate(-20.500000, -13.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

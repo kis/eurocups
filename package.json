@@ -23,6 +23,7 @@
     "precss": "^1.4.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
+    "react-modal": "^1.6.5",
     "react-redux": "^4.4.0",
     "react-router": "^2.0.1",
     "redux": "^3.3.1",
@@ -31,6 +32,7 @@
     "redux-thunk": "^2.1.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
+    "svg-url-loader": "^2.0.1",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1",
     "whatwg-fetch": "^1.0.0"

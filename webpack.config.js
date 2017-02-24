@@ -28,6 +28,7 @@ module.exports = {
     loaders: [{
       test: /\.js?$/,
       loaders: ['babel-loader?stage=0&optional=runtime'],
+      exclude: /node_modules/,
       include: path.join(__dirname, '/js')
     }, {
       test: /\.css?$/,
@@ -35,6 +36,9 @@ module.exports = {
     }, {
       test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
       loader: 'file?name=[path][name].[ext]?[hash]'
+    }, {
+      test: /\.svg/,
+      loader: 'svg-url-loader'
     }]
   },
   plugins: [

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+.modal-header {
+	padding: 36px 67px 20px 67px;
+	text-align: center;
+
+	.close {
+		background: url(./icons/close-icon.png);
+		height: 17px;
+    	width: 17px;
+    	position: absolute;
+    	right: 20px;
+    	top: 20px;
+    	cursor: pointer;
+	}
+	
+	.modal-header__title {
+		font-size: 27px;
+		margin: 10px 0 20px 0;
+	}
+
+	.modal-header__subtitle {
+		padding: 0 50px;
+		font-size: 16px;
+		color: #231f20;
+		opacity: 0.5;
+	}
+}
+
+.modal-content {
+	width: 339px;
+
+	.join-with {
+		display: block;
+		width: 339px;
+		height: 60px;
+		margin: 0 60px;
+		cursor: pointer;
+
+		.join-text {
+			float: left;
+			color: white;
+			padding: 21px 25px 20px 25px;			
+		}
+
+		.fb-logo {
+			float: right;
+			margin: 12px 12px 13px 12px;
+    		width: 35px;
+    		height: 35px;
+    		background-image: url(./icons/facebook.png);
+    		background-size: contain;
+		}
+
+		.tw-logo {
+			float: right;
+			margin: 14px 14px 16px 14px;
+    		width: 30px;
+    		height: 30px;
+    		background-image: url(./icons/twitter.png);
+    		background-size: contain;
+		}
+
+		.gg-logo {
+			float: right;
+			margin: 15px 18px 17px 18px;
+    		width: 28px;
+    		height: 28px;
+    		background-image: url(./icons/google.png);
+    		background-size: contain;
+		}
+
+		.em-logo {
+			float: right;
+			margin: 21px 19px 20px 19px;
+    		width: 26px;
+    		height: 19px;
+    		background-image: url(./icons/group-4@2x.png);
+    		background-size: contain;
+		}
+	
+		&.fb {
+			background: #3b5998;
+		}
+
+		&.tw {
+			background: #00acee;
+		}
+
+		&.gg {
+			background: #d9dfe4;
+		}
+
+		&.em {
+			background: #e0192c;
+		}
+	}
+}
+
+.modal-footer {
+	padding: 53px 53px 40px 83px;
+	font-size: 16px;
+
+	div {
+		.log-in {
+			cursor: pointer;
+			color: #e0192c;
+		}
+	}
+}
