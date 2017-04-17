@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "10c9031447d60ebaa31d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e3239e32c65f86af65c8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32915,6 +32915,10 @@
 
 	var _componentsHeaderHeader2 = _interopRequireDefault(_componentsHeaderHeader);
 
+	// import TeamsContainer from './TeamsContainer';
+	// import TeamContainer from './TeamContainer';
+	// import PlayerContainer from './PlayerContainer/PlayerContainer';
+
 	var AppContainer = (function (_Component) {
 		_inherits(AppContainer, _Component);
 
@@ -32925,17 +32929,25 @@
 		}
 
 		_createClass(AppContainer, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				// this.context.router.history.push('teams');
+			}
+		}, {
 			key: 'render',
 			value: function render() {
-				console.log(this.props);
-
 				return _react2['default'].createElement(
 					'div',
 					null,
-					_react2['default'].createElement(_componentsHeaderHeader2['default'], this.props),
-					this.props.children
+					_react2['default'].createElement(_componentsHeaderHeader2['default'], this.props)
 				);
 			}
+		}], [{
+			key: 'contextTypes',
+			value: {
+				router: _propTypes.PropTypes.object
+			},
+			enumerable: true
 		}]);
 
 		return AppContainer;

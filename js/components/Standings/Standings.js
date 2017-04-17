@@ -9,46 +9,46 @@ class Standings extends Component {
 	}
 
 	static propTypes = {
-  	teams: PropTypes.object.isRequired
+  		teams: PropTypes.object.isRequired
 	}
 
-  static contextTypes = {
-  	router: PropTypes.object
+  	static contextTypes = {
+  		router: PropTypes.object
 	}
 
-  componentWillMount() {
-  	const { actions } = this.props;
-  	actions.fetchStandings();
-  }
+  	componentWillMount() {
+  		const { actions } = this.props;
+  		actions.fetchStandings();
+  	}
 
-  openTeamView(team) {
+  	openTeamView(team) {
 		team = team.replace(/\s/g, '-');
 		this.context.router.history.push('/teams/' + team.toLowerCase());
 	}
 
-  renderGroup(group, data) {
+  	renderGroup(group, data) {
 		let headers = Object.keys(data[0].stats);
 
-  	return (
-  		<div>
-	  		<div className="group-table-header">
-	  			<div>Team</div>
-		  			{ headers.map((key, i) => {
-							key = key.replace('_', ' ');
-							return <div key={i}>{ key }</div>
-		  			})}
-	  		</div>
-	  		{ data.map((key, i) => {
-		  		return <div key={i} className="group-table-line" onClick={this.openTeamView.bind(this, key.team)}>
-		  			<div>{ key.team }</div>
-		  				{ Object.keys(key.stats).map((bkey, j) => {
-			  				return <div key={j}>{ key.stats[bkey] }</div>
+	  	return (
+	  		<div>
+		  		<div className="group-table-header">
+		  			<div>Team</div>
+			  			{ headers.map((key, i) => {
+								key = key.replace('_', ' ');
+								return <div key={i}>{ key }</div>
 			  			})}
-		  			</div>
-		  	})}
-		  </div>
-  	);
-  }
+		  		</div>
+		  		{ data.map((key, i) => {
+			  		return <div key={i} className="group-table-line" onClick={this.openTeamView.bind(this, key.team)}>
+			  			<div>{ key.team }</div>
+			  				{ Object.keys(key.stats).map((bkey, j) => {
+				  				return <div key={j}>{ key.stats[bkey] }</div>
+				  			})}
+			  			</div>
+			  	})}
+			  </div>
+	  	);
+  	}
 
 	render() {
 		const { teams } = this.props;
