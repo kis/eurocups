@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "euro16",
   "scripts": {
+    "start": "node server",
     "start-dev": "export NODE_ENV=development&&webpack&&node server",
     "start-prod": "export NODE_ENV=production&&webpack&&node server",
     "flow": "flow; test $? -eq 0 -o $? -eq 2"
