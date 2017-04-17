@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import * as util from '../../util/util';
 
@@ -20,13 +21,13 @@ class Team extends Component {
 	}
 
 	static contextTypes = {
-  		router: React.PropTypes.object
+  		router: PropTypes.object
   	}
 
 	openPlayerView(player) {
 		player = player.replace(/\s/g, '-');
-		let link = ['/teams', this.props.routeParams.team, player.toLowerCase()].join('/');
-		this.context.router.push(link);
+		let link = ['/teams', this.props.match.params.team, player.toLowerCase()].join('/');
+		this.context.router.history.push(link);
 	}
 
 	togglePlayerInfo(i) {

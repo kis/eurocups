@@ -1,4 +1,4 @@
-# UEFA Euro 2016 Analytics
+# UEFA Eurocups Analytics
 
 ####dev
 * webpack-dev-server --content-base=dist --inline --watch --hot

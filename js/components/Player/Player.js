@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import * as util from '../../util/util';
 
@@ -14,7 +15,7 @@ class Player extends Component {
 	}
 
 	static contextTypes = {
-  		router: React.PropTypes.object
+  		router: PropTypes.object
   	}
 
   	shouldComponentUpdate() {
@@ -24,7 +25,7 @@ class Player extends Component {
 	render() {
 		let { team } = this.props;
 
-		let playerName = this.props.routeParams.player;
+		let playerName = this.props.match.params.player;
 		playerName = playerName.replace(/[-]/g, ' ');
 
 		let findPlayer = (player) => {

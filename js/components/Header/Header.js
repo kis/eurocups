@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import AuthModal from '../AuthModal/AuthModal';
 
 import './header.css';
@@ -37,10 +37,6 @@ class Header extends Component {
 	    this.setState({modalIsOpen: false});
 	}
 
-	static contextTypes = {
-  		router: React.PropTypes.object
-  	}
-
   	openBC(i) {
   		let route = '';
 
@@ -50,7 +46,7 @@ class Header extends Component {
   			}
   		});
 
-  		this.context.router.push(route);
+  		this.context.router.history.push(route);
   	}
 
 	render() {

@@ -1,14 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/team';
+
+import { withRouter } from 'react-router-dom';
 
 import Team from '../components/Team/Team';
 
 class TeamContainer extends Component {
 	componentWillMount() {
-		const { actions, params } = this.props;
-		actions.fetchTeam(params.team);
+		const { actions } = this.props;
+		actions.fetchTeam(this.props.match.params.team);
 	}
 	
 	render() {
@@ -26,4 +29,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
 
-export default connect(mapStateToProps, mapDispatchToProps)(TeamContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TeamContainer));

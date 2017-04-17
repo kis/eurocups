@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import './standings.css';
 
@@ -12,7 +13,7 @@ class Standings extends Component {
 	}
 
   static contextTypes = {
-  	router: React.PropTypes.object
+  	router: PropTypes.object
 	}
 
   componentWillMount() {
@@ -22,7 +23,7 @@ class Standings extends Component {
 
   openTeamView(team) {
 		team = team.replace(/\s/g, '-');
-		this.context.router.push('/teams/' + team.toLowerCase());
+		this.context.router.history.push('/teams/' + team.toLowerCase());
 	}
 
   renderGroup(group, data) {

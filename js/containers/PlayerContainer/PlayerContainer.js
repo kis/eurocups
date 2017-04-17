@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/comments';
 
+import { withRouter } from 'react-router-dom';
+
 import Player from '../../components/Player/Player';
 import CommentsForm from '../../components/CommentsForm/CommentsForm';
 import Comments from '../../components/Comments/Comments';
@@ -32,4 +34,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PlayerContainer));
