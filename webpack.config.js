@@ -14,10 +14,10 @@ console.log(NODE_ENV)
 
 module.exports = {
   context: appContext,
+  mode: 'development',
   entry: [
-    './js/index',
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080/'
+    'babel-polyfill',
+    './js/index'
   ],
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -25,27 +25,32 @@ module.exports = {
     publicPath: "/"
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js?$/,
-      loaders: ['babel-loader?stage=0&optional=runtime'],
+      loader: 'babel-loader',
       exclude: /node_modules/,
       include: path.join(__dirname, '/js')
     }, {
       test: /\.css?$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader')
+      use: [
+        'style-loader',
+        { loader: 'css-loader'},
+        { loader: 'postcss-loader', options: { postcss: [autoprefixer, precss, mixins] } }
+      ]
     }, {
       test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
-      loader: 'file?name=[path][name].[ext]?[hash]'
+      loader: 'file-loader?name=[path][name].[ext]?[hash]'
     }, {
       test: /\.svg/,
       loader: 'svg-url-loader'
     }]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin("[name].css", { allChunks: true })
+    new ExtractTextPlugin("[name].css", { allChunks: true }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer, precss, mixins],
+      },
+    })
   ],
-  postcss: function () {
-    return [autoprefixer, precss, mixins];
-  }
 };

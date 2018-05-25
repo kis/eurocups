@@ -1,14 +1,12 @@
 import euroApp from '../reducers/index';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
-
-const loggerMiddleware = createLogger();
+import logger from 'redux-logger';
 
 export default createStore(
   euroApp,
   applyMiddleware(
     thunkMiddleware,
-    loggerMiddleware
+    logger
   )
 );

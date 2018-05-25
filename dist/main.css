@@ -115,16 +115,12 @@ body {
   height: 0; }
 
 .options-container {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Liberation Mono";
@@ -158,16 +154,12 @@ body {
   height: 0; }
 
 .teams-groups {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Liberation Mono";
@@ -201,16 +193,12 @@ body {
   height: 0; }
 
 .teams-container {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Liberation Mono";
@@ -273,16 +261,12 @@ body {
   height: 0; }
 
 .standings-container {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Liberation Mono";
@@ -315,18 +299,14 @@ body {
         cursor: pointer;
         background: #4a6a77; }
     .standings-container .group-container .group-table .group-table-header, .standings-container .group-container .group-table .group-table-line {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
       .standings-container .group-container .group-table .group-table-header div, .standings-container .group-container .group-table .group-table-line div {
@@ -349,16 +329,12 @@ body {
   height: 0; }
 
 .team-container {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Liberation Mono";
@@ -490,14 +466,6 @@ body {
       color: #00480d; }
       .comments-form .form-btn button:hover {
         background: #46a246; }
-@-webkit-keyframes show-comment {
-  from {
-    position: relative;
-    left: 20px; }
-  to {
-    position: relative;
-    left: 0px; } }
-
 @keyframes show-comment {
   from {
     position: relative;
@@ -515,8 +483,7 @@ body {
     background: #a1d0ae;
     font-size: 14px; }
     .comments-container .comment.animate {
-      -webkit-animation: show-comment 1s;
-              animation: show-comment 1s; }
+      animation: show-comment 1s; }
     .comments-container .comment div:first-child {
       font-weight: bold;
       margin-bottom: 10px; }
@@ -532,16 +499,12 @@ body {
   height: 0; }
 
 .player-outer {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: "Liberation Mono";

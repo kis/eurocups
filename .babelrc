@@ -1,4 +1,14 @@
 {
-  "optional": ["runtime"],
-  "stage": 0
+  "presets": [["env", {"modules": false}], "stage-0", "react"],
+  "env": {
+    "test": {
+      "presets": [["env", {"modules": false}], "stage-0", "react"]
+    }
+  },
+  "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-class-properties",
+    "transform-runtime", 
+    "transform-es2015-object-super"
+  ]
 }

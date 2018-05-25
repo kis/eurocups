@@ -46,7 +46,7 @@ class Header extends Component {
   			}
   		});
 
-  		this.context.router.history.push(route);
+		this.context.router.history.push(route);
   	}
 
 	render() {
@@ -55,6 +55,7 @@ class Header extends Component {
 			route: '/teams'
 		}];
 
+		if (!this.props.params) return null;
 		let paramsArr = Object.keys(this.props.params);
 
 		if (paramsArr && paramsArr.length) {
