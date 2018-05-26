@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions/teams';
+import * as actionsTeams from '../actions/teams';
+import * as actionsTeam from '../actions/team';
 
 import { withRouter } from 'react-router-dom';
 
@@ -29,6 +30,6 @@ const mapStateToProps = (state) => ({
 	teams: state.teams
 });
 
-const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
+const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators({...actionsTeams, ...actionsTeam}, dispatch)});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TeamsContainer));

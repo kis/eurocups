@@ -9,10 +9,10 @@ import { withRouter } from 'react-router-dom';
 import Team from '../components/Team/Team';
 
 class TeamContainer extends Component {
-	componentWillMount() {
-		const { actions } = this.props;
-		actions.fetchTeam(this.props.match.params.team);
-	}
+	// componentWillMount() {
+	// 	const { actions } = this.props;
+	// 	actions.fetchTeam(this.props.match.params.team);
+	// }
 	
 	render() {
 		return (

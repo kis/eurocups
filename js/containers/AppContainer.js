@@ -3,13 +3,8 @@ import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
-
 import * as actions from '../actions/teams';
-
 import Header from '../components/Header/Header';
-// import TeamsContainer from './TeamsContainer';
-// import TeamContainer from './TeamContainer';
-// import PlayerContainer from './PlayerContainer/PlayerContainer';
 
 class AppContainer extends Component {
 	static contextTypes = {
@@ -17,7 +12,7 @@ class AppContainer extends Component {
 	}
 
 	componentWillMount() {
-		// this.context.router.history.push('teams');
+		this.context.router.history.push('teams');
 	}
 
 	render() {

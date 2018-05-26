@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
 import * as util from '../../util/util';
-
 import './teams.css';
 
 class Teams extends Component {
@@ -20,23 +18,29 @@ class Teams extends Component {
 
   	componentWillMount() {
   		const { actions } = this.props;
-  		actions.fetchTeams();
+		actions.fetchTeams();
   	}
 
 	openTeamView(team) {
 		team = team.replace(/\s/g, '-');
 		this.context.router.history.push('/teams/' + team.toLowerCase());
+		this.props.actions.fetchTeam(team.toLowerCase());
 	}
 
 	render() {
-		var filteredTeams = this.props.teams.teams ? this.props.teams.teams.filter((res, i) => {
-			return res.Group === this.props.teams.activeGroupFilter || this.props.teams.activeGroupFilter === "SHOW ALL";
+		const { teams } = this.props;
+
+		const filteredTeams = teams.teams ? teams.teams.filter((res, i) => {
+			return res.Group === teams.activeGroupFilter || teams.activeGroupFilter === "SHOW ALL";
 		}) : null;
 
 		return (
 			<div className="teams-container">
 				{filteredTeams ? filteredTeams.map((result, i) => {
-					return <div className="team-item" style={util.getTeamColor()} key={i} onClick={this.openTeamView.bind(this, result.Team)}>
+					return <div className="team-item" 
+								style={util.getTeamColor()} 
+								key={i} 
+								onClick={() => this.openTeamView(result.Team)}>
 						<div className="team-group">{result.Group}</div>
 						<div className="team-title">{result.Team}</div>
 						<div className="team-coach clearfix">
