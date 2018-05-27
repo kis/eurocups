@@ -22,7 +22,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "bundle.js",
-    publicPath: "/"
+    publicPath: "/",
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [{

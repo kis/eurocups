@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import * as actions from '../actions/teams';
 import Header from '../components/Header/Header';
+import history from '../history';
+
+import TeamsContainer from './TeamsContainer';
+import TeamContainer from './TeamContainer';
+import PlayerContainer from './PlayerContainer/PlayerContainer';
 
 class AppContainer extends Component {
 	static contextTypes = {
@@ -12,20 +17,27 @@ class AppContainer extends Component {
 	}
 
 	componentWillMount() {
-		this.context.router.history.push('teams');
+		// this.context.router.history.push('teams');
 	}
 
 	render() {
 		return (
-			<div>
-				<Header {...this.props} />
-			</div>
+			<BrowserRouter basename="/">
+				<div>
+					<Header {...this.props} />
+					<Route path="/teams" component={TeamsContainer} />
+					<Route path="/teams/:team" component={TeamContainer} />
+					<Route path="/teams/:team/:player" component={PlayerContainer} />
+				</div>
+			</BrowserRouter>
 		);
 	}
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+	team: state.team
+});
 
 const mapDispatchToProps = (dispatch) => ({actions: bindActionCreators(actions, dispatch)});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AppContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
