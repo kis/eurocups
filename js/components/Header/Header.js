@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import history from '../../history';
 import './header.css';
 
-class Header extends Component {
+export default class Header extends Component {
 	render() {
 		return (
 			<div className="header noselect">
@@ -16,5 +16,3 @@ class Header extends Component {
 		);
 	}
 }
-
-export default Header;

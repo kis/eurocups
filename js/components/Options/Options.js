@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
 import './options.css';
 
-class Options extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Options extends Component {
 	static propTypes = {
   		teams: PropTypes.object.isRequired
   	}
@@ -23,13 +18,19 @@ class Options extends Component {
 	}
 
 	render() {
+		const { teams } = this.props;
+
 		return (
 		    <div className="options-container">
-		    	<div className={this.props.teams.showTeams ? "active-option" : null} onClick={this.toggleTeams.bind(this)}>SHOW TEAMS</div>
-		    	<div className={this.props.teams.showStandings ? "active-option" : null} onClick={this.toggleStandings.bind(this)}>SHOW STANDINGS</div>
+				<div className={teams.showTeams ? "active-option" : null} 
+					 onClick={() => this.toggleTeams()}>
+					 SHOW TEAMS
+				</div>
+				<div className={teams.showStandings ? "active-option" : null} 
+					 onClick={() => this.toggleStandings()}>
+					 SHOW STANDINGS
+				</div>
 			</div>
 		);
 	}
 }
-
-export default Options;

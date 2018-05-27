@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
 import * as util from '../../util/util';
-
 import './player.css';
 
-class Player extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Player extends Component {
 	static propTypes = {
 		team: PropTypes.object.isRequired
 	}
@@ -62,5 +56,3 @@ class Player extends Component {
 		);
 	}
 }
-
-export default Player;

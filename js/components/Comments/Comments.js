@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
 import './comments.css';
 
-class Comments extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Comments extends Component {
 	render() {
 		let { comments } = this.props;
 
@@ -23,5 +18,3 @@ class Comments extends Component {
 		);
 	}
 }
-
-export default Comments;

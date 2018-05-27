@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { reduxForm } from 'redux-form';
-
 export const fields = [ 'name', 'comment' ];
-
 import './comments-form.css';
 
-
 class CommentsForm extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	static propTypes = {
 		fields: PropTypes.object.isRequired,
 		handleSubmit: PropTypes.func.isRequired,
@@ -21,16 +14,10 @@ class CommentsForm extends Component {
 
 	submit = (values, dispatch) => {
 		return new Promise((resolve, reject) => {
-	      	/*if (![ 'john', 'paul', 'george', 'ringo' ].includes(values.username)) {
-	        	reject({ username: 'User does not exist', _error: 'Login failed!' })
-	      	} else if (values.password !== 'redux-form') {
-	        	reject({ password: 'Wrong password', _error: 'Login failed!' })
-	      	} else {*/
-	      		let { actions } = this.props;
-	        	actions.saveComment(values);
-	        	this.props.resetForm();
-	        	resolve();
-	      	// }
+			let { actions } = this.props;
+			actions.saveComment(values);
+			this.props.resetForm();
+			resolve();
 	  	});
 	}
 

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
 import * as util from '../../util/util';
-
 import './team.css';
 
-class Team extends Component {
+export default class Team extends Component {
 	constructor(props) {
 		super(props);
 
@@ -73,5 +71,3 @@ class Team extends Component {
 		);
 	}
 }
-
-export default Team;

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
 import './standings.css';
 
-class Standings extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Standings extends Component {
 	static propTypes = {
   		teams: PropTypes.object.isRequired
 	}
@@ -39,7 +34,9 @@ class Standings extends Component {
 			  			})}
 		  		</div>
 		  		{ data.map((key, i) => {
-			  		return <div key={i} className="group-table-line" onClick={this.openTeamView.bind(this, key.team)}>
+					  return <div key={i} 
+					  			  className="group-table-line" 
+					  			  onClick={this.openTeamView.bind(this, key.team)}>
 			  			<div>{ key.team }</div>
 			  				{ Object.keys(key.stats).map((bkey, j) => {
 				  				return <div key={j}>{ key.stats[bkey] }</div>
@@ -73,5 +70,3 @@ class Standings extends Component {
 		);
 	}
 }
-
-export default Standings;

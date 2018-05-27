@@ -3,11 +3,7 @@ import { PropTypes } from 'prop-types';
 import * as util from '../../util/util';
 import './teams.css';
 
-class Teams extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Teams extends Component {
 	static propTypes = {
     	teams: PropTypes.object.isRequired
   	}
@@ -58,5 +54,3 @@ class Teams extends Component {
 		);
 	}
 }
-
-export default Teams;

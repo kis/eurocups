@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-
 import './groups.css';
 
-class Groups extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+export default class Groups extends Component {
 	filterByGroup(group) {
 		const { actions } = this.props;
 		actions.filterTeamsByGroup(group);
 	}
 
 	render() {
+		const { teams } = this.props;
 		return (
 		    <div className="teams-groups">
-				{this.props.teams.groups.map((res, i) => {
-					return <div className={this.props.teams.activeGroupFilter === res ? "active-group" : null} key={i} onClick={this.filterByGroup.bind(this, res)}>{res}</div>
+				{teams.groups.map((res, i) => {
+					return <div className={teams.activeGroupFilter === res ? "active-group" : null} 
+								key={i} 
+								onClick={() => this.filterByGroup(res)}>
+								{res}
+							</div>
 				})}
 			</div>
 		);
 	}
 }
-
-export default Groups;
