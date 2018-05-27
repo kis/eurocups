@@ -16,13 +16,9 @@ class AppContainer extends Component {
 	  	router: PropTypes.object
 	}
 
-	componentWillMount() {
-		// this.context.router.history.push('teams');
-	}
-
 	render() {
 		return (
-			<BrowserRouter basename="/">
+			<BrowserRouter basename="/eurocups">
 				<div>
 					<Header {...this.props} />
 					<Route path="/teams" component={TeamsContainer} />

@@ -13,8 +13,6 @@ import Standings from '../components/Standings/Standings';
 
 class TeamsContainer extends Component {
 	render() {
-		console.log('teams', this.props);
-
 		const { teams } = this.props;
 
 		return (
