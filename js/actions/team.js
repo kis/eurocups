@@ -20,7 +20,7 @@ export function fetchTeam(team) {
 }
 
 async function teamData(team) {
-	let teamData = await fetch(`/assets/football/Euro2016/${team}-players.json`);
+	let teamData = await fetch(`https://raw.githubusercontent.com/jokecamp/FootballData/master/UEFA_European_Championship/Euro%202016/players_json/${team}-players.json`);
 	let res = await teamData.json();
 	return res.sheets.Players;
 }

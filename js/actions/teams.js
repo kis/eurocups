@@ -27,7 +27,7 @@ export function fetchTeams() {
 }
 
 async function teamsData() {
-  let teamsData = await fetch('/assets/football/Euro2016/teams.json');
+  let teamsData = await fetch('https://raw.githubusercontent.com/jokecamp/FootballData/master/UEFA_European_Championship/Euro%202016/players_json/teams.json');
   let res = await teamsData.json();
   return res.sheets.Teams;
 }
@@ -58,7 +58,7 @@ export function fetchStandings() {
 }
 
 async function standingsData() {
-  let stData = await fetch('/assets/football/uefa-euro-201616.json');
+  let stData = await fetch('https://raw.githubusercontent.com/jokecamp/FootballData/master/sports-open-data/standings/uefa-euro-201616.json');
   let res = await stData.json();
   return res;
 }
