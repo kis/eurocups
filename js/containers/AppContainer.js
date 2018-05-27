@@ -18,7 +18,7 @@ class AppContainer extends Component {
 
 	render() {
 		return (
-			<BrowserRouter basename="/eurocups">
+			<BrowserRouter>
 				<div>
 					<Header {...this.props} />
 					<Route path="/teams" component={TeamsContainer} />
