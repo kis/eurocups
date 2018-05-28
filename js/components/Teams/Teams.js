@@ -12,7 +12,7 @@ export default class Teams extends Component {
   		router: PropTypes.object
   	}
 
-  	componentWillMount() {
+  	componentDidMount() {
   		const { actions } = this.props;
 		actions.fetchTeams();
   	}

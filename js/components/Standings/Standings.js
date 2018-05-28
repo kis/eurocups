@@ -11,7 +11,7 @@ export default class Standings extends Component {
   		router: PropTypes.object
 	}
 
-  	componentWillMount() {
+  	componentDidMount() {
   		const { actions } = this.props;
   		actions.fetchStandings();
   	}
