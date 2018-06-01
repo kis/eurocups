@@ -38,7 +38,7 @@ module.exports = {
       use: [
         'style-loader',
         { loader: 'css-loader'},
-        { loader: 'postcss-loader', options: { postcss: [autoprefixer, precss, mixins] } }
+        { loader: 'postcss-loader', options: { postcss: [autoprefixer, precss, mixins], } }
       ]
     }, {
       test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
