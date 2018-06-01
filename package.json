@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "eurocups",
   "scripts": {
-    "start": "webpack && webpack-dev-server --hot",
-    "start-dev": "export NODE_ENV=development && webpack",
-    "start-prod": "export NODE_ENV=production && webpack"
+    "start": "npm run start-dev",
+    "start-dev": "export NODE_ENV=development && webpack && webpack-dev-server --hot",
+    "start-prod": "export NODE_ENV=production && webpack && webpack-dev-server --hot"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.4",
