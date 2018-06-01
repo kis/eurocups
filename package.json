@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "eurocups",
   "scripts": {
-    "start": "npm run start-dev && webpack-dev-server --hot",
+    "start": "webpack && webpack-dev-server --hot",
     "start-dev": "export NODE_ENV=development && webpack",
     "start-prod": "export NODE_ENV=production && webpack"
   },
