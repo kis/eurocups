@@ -1,0 +1,446 @@
+.teams-groups {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	div {
+		margin: 10px;
+		padding: 10px;
+		width: auto;
+		height: auto;
+		padding: 20px 35px;
+		background: rgba(165,17,0,0.6);
+		color: white;
+		font-weight: bold;
+
+		&:hover {
+			cursor: pointer;
+			background: rgba(165,17,0,1);
+		}
+
+		&.active-group {
+			background: rgba(165,17,0,1);
+		}
+	}
+}
+.comments-form {
+	position: relative;
+	display: inline-block;
+	color: #00480d;
+
+	.form-input {
+		margin: 0px 15px 10px;
+
+		input {
+			height: 35px;
+   			width: 260px;
+   			outline: none;
+   			border: 0px;
+   			color: #00480d;
+   			background: beige;
+   			padding-left: 10px;
+		}
+	}
+
+	.form-btn {
+		margin: 15px;
+
+		button {
+			margin-right: 15px;
+			height: 45px;
+			background: #80bf80;
+			border: 0;
+			outline: none;
+			cursor: pointer;
+			color: #00480d;
+
+			&:hover {
+				background: #46a246;
+			}
+		}
+	}
+}@mixin noselect() {
+    user-select: none;
+}
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}
+
+.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}.header {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background: #4e6d54;
+	@include noselect();
+
+	.breadcrumbs {
+		color: green;
+
+		.bc-item {
+			margin: 10px;
+			padding: 10px;
+			display: inline-block;
+			background: aquamarine;
+			cursor: pointer;
+
+			&:hover {
+				background: #2affb7;
+			}
+		}
+	}
+}
+.options-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	div {
+		margin: 10px;
+		padding: 10px;
+		width: auto;
+		height: auto;
+		padding: 20px 35px;
+		background: rgba(165,17,0,0.6);
+		color: white;
+		font-weight: bold;
+
+		&:hover {
+			cursor: pointer;
+			background: rgba(165,17,0,1);
+		}
+
+		&.active-option {
+			background: rgba(165,17,0,1);
+		}
+	}
+}@keyframes show-comment {
+	from {
+		position: relative;
+		left: 20px;
+	}
+	to {
+		position: relative;
+		left: 0px;
+	}	
+}
+
+.comments-container {
+	color: #205202;
+
+	.comment {
+		margin: 15px;
+		padding: 10px;
+		word-wrap: break-word;
+		background: #a1d0ae;
+		font-size: 14px;
+		
+		&.animate {
+			animation: show-comment 1s;
+		}
+
+		div:first-child {
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+	}
+}.teams-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	.team-item {
+		position: relative;
+		margin: 10px;
+		padding: 10px;
+		width: 300px;
+		height: 330px;
+		color: rgba(0,53,5,0.9);
+		font-weight: bold;
+
+		&:hover {
+			opacity: 1 !important;
+			color: rgba(0,53,5,1);
+			cursor: pointer;
+		}
+
+		.team-group {
+			margin: 15px 5px;
+			font-size: 24px;
+			text-align: center;
+		}
+
+		.team-title {
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.team-coach {
+			margin: 15px 5px;
+			color: black;
+
+			div:first-child {
+				display: inline-block;
+				float: left;
+			}
+			div:last-child {
+				display: inline-block;
+				float: right;
+			}
+		}
+
+		.team-bio {
+			margin: 15px 5px;
+			color: black;
+			font-weight: normal;
+		}
+
+		.team-rank {
+			position: absolute;
+			bottom: 10px;
+			width: 290px;
+			margin: 5px 5px;
+
+			div:first-child {
+				display: inline-block;
+				float: left;
+			}
+			div:last-child {
+				display: inline-block;
+				float: right;
+			}
+		}
+	}
+}
+.standings-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	.group-container {
+		margin: 10px;
+		padding: 10px;
+		width: 90%;
+		min-width: 1000px;
+		height: auto;
+		padding: 0px 0px 15px 0px;
+		background: rgb(48, 73, 84);
+		color: white;
+
+		.group-title {
+			padding: 20px;
+			font-size: 22px;
+			font-weight: bold;
+			text-align: center;
+			background: #4a6a77;
+		}
+
+		.group-table {
+			.group-table-header {
+				font-weight: bold;
+				background: #5a8ca0;
+				padding: 0px 50px;
+			}
+
+			.group-table-line {
+				padding: 0px 50px;
+
+				&:hover {
+					cursor: pointer;
+					background: #4a6a77;
+				}
+			}
+
+			.group-table-header, .group-table-line {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-around;
+
+				div {
+					padding: 5px 5px;
+
+					&:first-child {
+						width: 180px;
+						min-width: 180px;
+					}
+
+					&:not(:first-child) {
+						text-align: center;
+						width: 60px;
+					}
+				}
+			}
+
+		}
+	}
+}
+.team-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	.player {
+		margin: 2px;
+		width: 80%;
+		height: auto;
+		background: rgb(95,129,119);
+		color: rgba(0,53,5,0.9);
+		font-weight: bold;
+
+		&:hover {
+			opacity: 1 !important;
+			color: rgba(0,53,5,1);
+			cursor: pointer;
+		}
+
+		.player-header {
+			padding: 7px;
+			display: inline-block;
+			width: 90%;
+
+			div {
+				margin: 8px 5px;
+				min-width: 180px;
+				display: inline-block;
+			}
+		}
+
+		.player-profile-link {
+			margin: 8px 5px;
+			color: #e6f355;
+			font-weight: bold;
+			float: right;
+    	padding: 7px;
+			max-width: 10%;
+
+			&:hover {
+				background: rgba(168, 145, 239, 0.37);
+			}
+		}
+
+		.player-info {
+			display: none;
+			background: #9cb8b0;
+			padding: 7px;
+
+			&.active {
+				display: block;
+			}
+
+			.player-goals, .player-caps {
+				margin: 15px 5px;
+				color: black;
+
+				div:first-child {
+					width: 200px;
+					display: inline-block;
+					float: left;
+				}
+				div:last-child {
+					display: inline-block;
+				}
+			}
+
+			.player-bio {
+				margin: 15px 5px;
+				color: black;
+				font-weight: normal;
+			}
+		}
+
+	}
+}
+.player-container {
+	position: relative;
+	display: inline-block;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	.player {
+		margin: 10px;
+		padding: 10px;
+		width: 300px;
+		height: auto;
+		color: rgba(0,53,5,0.9);
+		font-weight: bold;
+
+		&:hover {
+			opacity: 1 !important;
+			color: rgba(0,53,5,1);
+			cursor: pointer;
+		}
+
+		.player-group {
+			margin: 15px 5px;
+			font-size: 24px;
+			text-align: center;
+		}
+
+		.player-title {
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.player-coach, .player-rank, .player-goals, .player-caps {
+			margin: 15px 5px;
+
+			div:first-child {
+				display: inline-block;
+				float: left;
+			}
+			div:last-child {
+				display: inline-block;
+				float: right;
+			}
+		}
+
+		.player-coach {
+			color: black;
+		}
+
+		.player-bio {
+			margin: 15px 5px;
+			color: black;
+			font-weight: normal;
+		}
+	}
+}
+.player-outer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-family: "Liberation Mono";
+	@include noselect();
+
+	.comments-cilinder {
+		position: relative;
+		margin: 10px;
+		max-width: 300px;
+	}
+
+}

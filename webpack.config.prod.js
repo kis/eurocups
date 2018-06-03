@@ -1,27 +1,34 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var autoprefixer = require('autoprefixer');
-var precss       = require('precss');
-var mixins       = require('postcss-mixins');
+const autoprefixer = require('autoprefixer');
+const precss       = require('precss');
+const mixins       = require('postcss-mixins');
+const nested       = require('postcss-nested');
 
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extractCSS = new ExtractTextPlugin('./styles.css');
 
-var appContext = path.join(__dirname, '/');
+const miniExtractCSS = new MiniCssExtractPlugin({
+  filename: "[name].css",
+  chunkFilename: "[id].css"
+});
 
-var NODE_ENV = process.env.NODE_ENV || "production";
+const appContext = path.join(__dirname, '/');
+
+const NODE_ENV = process.env.NODE_ENV || "production";
 console.log('env', NODE_ENV)
 
 module.exports = {
   context: appContext,
   mode: 'production',
-  entry: [
-    'babel-polyfill',
-    './js/index'
-  ],
+  entry: {
+    index: ['babel-polyfill', './js/index']
+  },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     publicPath: "/",
   },
   devtool: 'eval-sourcemap',
@@ -37,9 +44,17 @@ module.exports = {
     }, {
       test: /\.css?$/,
       use: [
-        'style-loader',
-        { loader: 'css-loader'},
-        { loader: 'postcss-loader', options: { postcss: [autoprefixer, precss, mixins], } }
+        MiniCssExtractPlugin.loader,
+        { 
+          loader: 'css-loader' 
+        },
+        { 
+          loader: 'postcss-loader', 
+          options: { 
+            ident: 'postcss', 
+            plugins: [autoprefixer, precss, mixins, nested] 
+          } 
+        }
       ]
     }, {
       test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
@@ -49,18 +64,28 @@ module.exports = {
       loader: 'svg-url-loader'
     }]
   },
+  stats: {
+    entrypoints: false,
+    children: false
+  },
   plugins: [
-    new ExtractTextPlugin("[name].css", { allChunks: true })
+    miniExtractCSS,
+    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      ENV: JSON.stringify('development'),
+    })
   ],
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-            test: /[\\/]node_modules[\\/]/,
-            name: "vendors",
-            chunks: "all"
-        }
-      }
-    }
-  }
+  // optimization: {
+  //   runtimeChunk: 'single',
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendors: {
+  //           test: /[\\/]node_modules[\\/]/,
+  //           name: 'vendors',
+  //           enforce: true,
+  //           chunks: 'all'
+  //       }
+  //     }
+  //   }
+  // }
 };

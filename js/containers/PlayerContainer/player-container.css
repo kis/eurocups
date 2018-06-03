@@ -6,7 +6,6 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	font-family: "Liberation Mono";
-	@include noselect();
 
 	.comments-cilinder {
 		position: relative;

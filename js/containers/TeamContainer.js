@@ -11,9 +11,7 @@ import Team from '../components/Team/Team';
 class TeamContainer extends Component {
 	render() {
 		return (
-			<div>
-				<Team {...this.props} />
-			</div>
+			<Team {...this.props} />
 		);
 	}
 }

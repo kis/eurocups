@@ -6,7 +6,6 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	font-family: "Liberation Mono";
-	@include noselect();
 
 	.team-item {
 		position: relative;

@@ -4,7 +4,6 @@
 	position: relative;
 	display: inline-block;
 	font-family: "Liberation Mono";
-	@include noselect();
 
 	.player {
 		margin: 10px;

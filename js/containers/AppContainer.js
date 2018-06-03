@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { PropTypes } from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -19,12 +19,12 @@ class AppContainer extends Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<div>
+				<Fragment>
 					<Header {...this.props} />
 					<Route path="/teams" component={TeamsContainer} />
 					<Route path="/teams/:team" component={TeamContainer} />
 					<Route path="/teams/:team/:player" component={PlayerContainer} />
-				</div>
+				</Fragment>
 			</BrowserRouter>
 		);
 	}

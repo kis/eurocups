@@ -1,0 +1,544 @@
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.header {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background: #4e6d54;
+}
+
+.header .breadcrumbs {
+	color: green;
+}
+
+.header .breadcrumbs .bc-item {
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+	background: aquamarine;
+	cursor: pointer
+}
+
+.header .breadcrumbs .bc-item:hover {
+	background: #2affb7;
+}
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.options-container {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-family: "Liberation Mono";
+}
+
+.options-container div.active-option {
+	background: rgba(165,17,0,1);
+}
+
+.options-container div {
+	margin: 10px;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	padding: 20px 35px;
+	background: rgba(165,17,0,0.6);
+	color: white;
+	font-weight: bold
+}
+
+.options-container div:hover {
+	cursor: pointer;
+	background: rgba(165,17,0,1);
+}
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.teams-groups {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-family: "Liberation Mono";
+}
+
+.teams-groups div.active-group {
+	background: rgba(165,17,0,1);
+}
+
+.teams-groups div {
+	margin: 10px;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	padding: 20px 35px;
+	background: rgba(165,17,0,0.6);
+	color: white;
+	font-weight: bold
+}
+
+.teams-groups div:hover {
+	cursor: pointer;
+	background: rgba(165,17,0,1);
+}
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.teams-container {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-family: "Liberation Mono";
+}
+
+.teams-container .team-item {
+	position: relative;
+	margin: 10px;
+	padding: 10px;
+	width: 300px;
+	height: 330px;
+	color: rgba(0,53,5,0.9);
+	font-weight: bold;
+}
+
+.teams-container .team-item .team-group {
+	margin: 15px 5px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.teams-container .team-item .team-title {
+	text-align: center;
+	cursor: pointer;
+}
+
+.teams-container .team-item .team-coach {
+	margin: 15px 5px;
+	color: black;
+}
+
+.teams-container .team-item .team-coach div:first-child {
+	display: inline-block;
+	float: left;
+}
+
+.teams-container .team-item .team-coach div:last-child {
+	display: inline-block;
+	float: right;
+}
+
+.teams-container .team-item .team-bio {
+	margin: 15px 5px;
+	color: black;
+	font-weight: normal;
+}
+
+.teams-container .team-item .team-rank {
+	position: absolute;
+	bottom: 10px;
+	width: 290px;
+	margin: 5px 5px;
+}
+
+.teams-container .team-item .team-rank div:first-child {
+	display: inline-block;
+	float: left;
+}
+
+.teams-container .team-item .team-rank div:last-child {
+	display: inline-block;
+	float: right;
+}
+
+.teams-container .team-item:hover {
+	opacity: 1 !important;
+	color: rgba(0,53,5,1);
+	cursor: pointer;
+}
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.standings-container {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-family: "Liberation Mono";
+}
+
+.standings-container .group-container {
+	margin: 10px;
+	padding: 10px;
+	width: 90%;
+	min-width: 1000px;
+	height: auto;
+	padding: 0px 0px 15px 0px;
+	background: rgb(48, 73, 84);
+	color: white;
+}
+
+.standings-container .group-container .group-title {
+	padding: 20px;
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+	background: #4a6a77;
+}
+
+.standings-container .group-container .group-table .group-table-header {
+	font-weight: bold;
+	background: #5a8ca0;
+	padding: 0px 50px;
+}
+
+.standings-container .group-container .group-table .group-table-line {
+	padding: 0px 50px
+}
+
+.standings-container .group-container .group-table .group-table-line:hover {
+	cursor: pointer;
+	background: #4a6a77;
+}
+
+.standings-container .group-container .group-table .group-table-header, .standings-container .group-container .group-table .group-table-line {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+.standings-container .group-container .group-table .group-table-header div:not(:first-child), .standings-container .group-container .group-table .group-table-line div:not(:first-child) {
+	text-align: center;
+	width: 60px;
+}
+
+.standings-container .group-container .group-table .group-table-header div, .standings-container .group-container .group-table .group-table-line div {
+	padding: 5px 5px
+}
+
+.standings-container .group-container .group-table .group-table-header div:first-child, .standings-container .group-container .group-table .group-table-line div:first-child {
+	width: 180px;
+	min-width: 180px;
+}
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.team-container {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-family: "Liberation Mono";
+}
+
+.team-container .player {
+	margin: 2px;
+	width: 80%;
+	height: auto;
+	background: rgb(95,129,119);
+	color: rgba(0,53,5,0.9);
+	font-weight: bold;
+}
+
+.team-container .player .player-header {
+	padding: 7px;
+	display: inline-block;
+	width: 90%;
+}
+
+.team-container .player .player-header div {
+	margin: 8px 5px;
+	min-width: 180px;
+	display: inline-block;
+}
+
+.team-container .player .player-profile-link {
+	margin: 8px 5px;
+	color: #e6f355;
+	font-weight: bold;
+	float: right;
+	padding: 7px;
+	max-width: 10%
+}
+
+.team-container .player .player-profile-link:hover {
+	background: rgba(168, 145, 239, 0.37);
+}
+
+.team-container .player .player-info {
+	display: none;
+	background: #9cb8b0;
+	padding: 7px;
+}
+
+.team-container .player .player-info .player-goals, .team-container .player .player-info .player-caps {
+	margin: 15px 5px;
+	color: black;
+}
+
+.team-container .player .player-info .player-goals div:first-child, .team-container .player .player-info .player-caps div:first-child {
+	width: 200px;
+	display: inline-block;
+	float: left;
+}
+
+.team-container .player .player-info .player-goals div:last-child, .team-container .player .player-info .player-caps div:last-child {
+	display: inline-block;
+}
+
+.team-container .player .player-info .player-bio {
+	margin: 15px 5px;
+	color: black;
+	font-weight: normal;
+}
+
+.team-container .player .player-info.active {
+	display: block;
+}
+
+.team-container .player:hover {
+	opacity: 1 !important;
+	color: rgba(0,53,5,1);
+	cursor: pointer;
+}
+
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.player-container {
+	position: relative;
+	display: inline-block;
+	font-family: "Liberation Mono";
+}
+
+.player-container .player {
+	margin: 10px;
+	padding: 10px;
+	width: 300px;
+	height: auto;
+	color: rgba(0,53,5,0.9);
+	font-weight: bold;
+}
+
+.player-container .player .player-group {
+	margin: 15px 5px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.player-container .player .player-title {
+	text-align: center;
+	cursor: pointer;
+}
+
+.player-container .player .player-coach, .player-container .player .player-rank, .player-container .player .player-goals, .player-container .player .player-caps {
+	margin: 15px 5px;
+}
+
+.player-container .player .player-coach div:first-child, .player-container .player .player-rank div:first-child, .player-container .player .player-goals div:first-child, .player-container .player .player-caps div:first-child {
+	display: inline-block;
+	float: left;
+}
+
+.player-container .player .player-coach div:last-child, .player-container .player .player-rank div:last-child, .player-container .player .player-goals div:last-child, .player-container .player .player-caps div:last-child {
+	display: inline-block;
+	float: right;
+}
+
+.player-container .player .player-coach {
+	color: black;
+}
+
+.player-container .player .player-bio {
+	margin: 15px 5px;
+	color: black;
+	font-weight: normal;
+}
+
+.player-container .player:hover {
+	opacity: 1 !important;
+	color: rgba(0,53,5,1);
+	cursor: pointer;
+}
+
+.comments-form {
+	position: relative;
+	display: inline-block;
+	color: #00480d;
+}
+.comments-form .form-input {
+	margin: 0px 15px 10px;
+}
+.comments-form .form-input input {
+	height: 35px;
+	width: 260px;
+	outline: none;
+	border: 0px;
+	color: #00480d;
+	background: beige;
+	padding-left: 10px;
+}
+.comments-form .form-btn {
+	margin: 15px;
+}
+.comments-form .form-btn button {
+	margin-right: 15px;
+	height: 45px;
+	background: #80bf80;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	color: #00480d
+}
+.comments-form .form-btn button:hover {
+	background: #46a246;
+}
+@keyframes show-comment {
+	from {
+		position: relative;
+		left: 20px;
+	}
+	to {
+		position: relative;
+		left: 0px;
+	}	
+}
+
+.comments-container {
+	color: #205202;
+}
+
+.comments-container .comment {
+	margin: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+	background: #a1d0ae;
+	font-size: 14px;	
+}
+
+.comments-container .comment div:first-child {
+	font-weight: bold;
+	margin-bottom: 10px;	
+}
+
+.comments-container .comment.animate {
+	animation: show-comment 1s;	
+}
+body {
+	margin: 0px;
+	background-color: rgba(64,146,0,0.2);
+}.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.player-outer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	font-family: "Liberation Mono";
+
+}
+
+.player-outer .comments-cilinder {
+	position: relative;
+	margin: 10px;
+	max-width: 300px;
+}

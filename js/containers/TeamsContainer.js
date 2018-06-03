@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionsTeams from '../actions/teams';
@@ -16,12 +16,12 @@ class TeamsContainer extends Component {
 		const { teams } = this.props;
 
 		return (
-			<div>
+			<Fragment>
 				<Options {...this.props} />
 				{ teams.showTeams || teams.showStandings ? <Groups {...this.props} /> : null }
 				{ teams.showTeams ? <Teams  {...this.props} /> : null }
 				{ teams.showStandings ? <Standings  {...this.props} /> : null }
-			</div>
+			</Fragment>
 		);
 	}
 }

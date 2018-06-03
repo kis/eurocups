@@ -5,7 +5,6 @@
 	top: 0px;
 	left: 0px;
 	background: #4e6d54;
-	@include noselect();
 
 	.breadcrumbs {
 		color: green;
